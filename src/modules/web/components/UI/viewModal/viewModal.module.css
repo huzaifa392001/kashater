@@ -1,0 +1,15 @@
+.modal_title {
+  color: #212121;
+  font-family: var(--font-semibold);
+  font-weight: 600;
+  font-size: 24px;
+  text-align: center;
+}
+.button_style {
+  background-color: #376fd0;
+  color: #ffffff;
+  width: 100px;
+  font-size: 11px;
+  border-radius: 8px;
+  padding: 10px;
+}

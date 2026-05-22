@@ -1,0 +1,146 @@
+.section {
+  padding: 1.5rem;
+}
+.sectionTitle {
+  font-family: var(--font-semibold-Inte);
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
+.Mark {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  font-family: var(--font-regular-Quicksand);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  color: #b1b3b5;
+  margin-top: 1rem;
+}
+.Mark p {
+  font-family: var(--font-regular-Quicksand);
+  font-weight: 400;
+  font-size: 14px;
+}
+.imgset {
+  width: 100px;
+}
+.text_set h2 {
+  font-family: var(--font-semibold);
+  font-weight: 700;
+  font-size: 70px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+.text_set p {
+  font-family: var(--font-regular);
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #fad243;
+}
+.continueBtn {
+  margin-top: 1rem;
+  background: linear-gradient(to right, #fff04d, #ffcf48);
+  padding: 0.75rem 1.5rem;
+  width: 100%;
+  border: none;
+  border-radius: 100px;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: var(--font-regular-Quicksand);
+}
+.continueBtn:disabled {
+  background: #ccc;
+  color: #666;
+  cursor: not-allowed;
+}
+
+.width_cont {
+  width: fit-content !important;
+  text-wrap: nowrap;
+}
+.productTable {
+  background-color: #111;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+.tableHeader,
+.productRow {
+  display: grid;
+  grid-template-columns: 1fr 0.5fr 0.5fr 0.5fr;
+  padding: 0.9rem 1.5rem;
+  align-items: center;
+  color: #ccc;
+  font-size: 0.875rem;
+}
+.productRow {
+  padding: 20px 25px;
+}
+.tableHeader {
+  background-color: #222;
+  font-weight: 600;
+  /* border-bottom: 1px solid #444; */
+}
+
+.productRow {
+  background-color: #000000;
+  border-bottom: 1px solid #444;
+}
+
+.productInfo {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.productInfo img {
+  width: 60px;
+  height: auto;
+  border-radius: 4px;
+}
+
+.buttonWrapper {
+  text-align: center;
+  margin-top: 2rem;
+}
+.rewardsContainer {
+  border: 1px solid #e3c417;
+  border-radius: 5px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.rewardsBox {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  gap: 10px;
+  background-color: #fbec991a;
+  flex-wrap: wrap;
+}
+
+.rewardText {
+  font-family: Merriweather;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.transactionsWrapper {
+  margin-bottom: 20px;
+}
+
+.transactionsTitle {
+  font-family: Merriweather;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}

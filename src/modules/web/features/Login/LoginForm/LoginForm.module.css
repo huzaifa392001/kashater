@@ -1,0 +1,142 @@
+.loginFrom .loginHeader {
+  text-align: center;
+  /* padding: 6px 0px;
+  margin-top: 0.5rem; */
+}
+
+.loginHeader>p {
+  margin-bottom: 20px;
+}
+
+.loginFrom form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mobil_text {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.mobil_text {
+  font-size: 14px;
+}
+
+.loginHeader h3 {
+  font-family: var(--font-bold-Quicksand);
+  color: #fff;
+  line-height: 36px;
+  font-weight: 700;
+  font-size: 24px;
+  text-transform: capitalize;
+  margin: 10px 0px;
+  margin-top: 20px;
+}
+
+.mobil_text p {
+  color: var(--primary-blue);
+  font-family: var(--font-bold);
+  font-size: 14px;
+  cursor: pointer;
+  text-align: start;
+}
+
+.timer {
+  color: #fff;
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 500;
+}
+
+.login_container_heder {
+  text-align: center;
+}
+
+.password_input {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.loginBtn {
+  background: linear-gradient(90deg, #ce8af200 0%, #8310c0 100%);
+  border: 1px solid #383837;
+  color: #fff;
+  padding: 12px 32px;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  font-family: var(--font-regular-Quicksand);
+}
+
+.loginBtn:hover {
+  box-shadow: inset 0 0 25px rgba(232, 12, 248, 0.5),
+    0 4px 12px rgba(0, 0, 0, 0.3);
+  transform: translateY(-1px);
+}
+
+/* .loginBtn:disabled {
+  background: linear-gradient(90deg, #a31dec61 0%, #c35df9af 100%);
+  color: #fff;
+  border: 1px solid #ddd;
+  cursor: not-allowed;
+  box-shadow: none;
+  opacity: 0.7;
+} */
+
+.mrg_top_1rem {
+  margin-top: 1rem;
+}
+
+.mrg_top_2rem {
+  margin-top: 2rem;
+}
+
+.mrg_top_3rem {
+  margin-top: 3rem;
+}
+
+.loginFooter {
+  font-weight: 300;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 1rem;
+  font-family: var(--font-regular-Quicksand);
+  color: #fff;
+}
+
+.loginFooter span {
+  font-family: var(--font-bold-Quicksand);
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: underline;
+  cursor: pointer;
+  margin-left: 7px;
+}
+
+@media (max-width: 500px) {
+  .loginFooter span {
+    font-size: 12px;
+  }
+
+  .loginFooter {
+    font-size: 12px;
+  }
+
+  .password_input {
+    gap: 1rem;
+  }
+
+  .loginHeader h3 {
+    font-size: 21px;
+
+    margin-top: 4px;
+  }
+}

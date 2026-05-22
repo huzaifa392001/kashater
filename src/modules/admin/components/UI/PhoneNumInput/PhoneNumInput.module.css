@@ -1,0 +1,44 @@
+.phone-input__container .phone-input__input {
+  border-radius: 8px;
+  border-color: var(--light-gray);
+  font-family: var(--primary-font);
+  padding: 12px 14px 12px 58px;
+  width: 100%;
+  height: auto;
+  box-shadow: none;
+}
+.phone-input__container > div:first-child {
+  font-family: var(--primary-font);
+  color: var(--primary-dark);
+  top: -9px;
+  left: 8px;
+  font-size: 12px;
+}
+.phone-input__container:focus-within > div:first-child {
+  color: var(--primary-dark);
+}
+.phone-input__container .phone-input__input:focus {
+  border-color: var(--secondary-dark);
+  box-shadow: 0 0 0 1px var(--light-gray);
+}
+.phone-input__container.error > div:first-child {
+  font-family: var(--primary-font);
+  color: #cd3232;
+  top: -9px;
+  left: 8px;
+  font-size: 12px;
+}
+.phone-input__container.error:focus-within > div:first-child {
+  color: #cd3232;
+}
+.phone-input__container.error .phone-input__input:focus {
+  border-color: #cd3232;
+  box-shadow: 0 0 0 1px #cd3232;
+}
+.hide-flag {
+  display: none !important;
+}
+.hide-flag {
+  background: transparent !important;
+  width: 40px; /* Keep space for +XX */
+}

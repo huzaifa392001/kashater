@@ -1,0 +1,109 @@
+/* ----- */
+.statusStepper {
+  padding: 20px;
+  /* background: #fff;
+    border-radius: 8px; */
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+}
+
+.stepperItem {
+  display: flex;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.stepperLeft {
+  position: relative;
+  margin-right: 20px;
+}
+
+.stepIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e0e0e0;
+  border: 2px solid #bdbdbd;
+  z-index: 2;
+  position: relative;
+}
+
+.stepIcon.completed {
+  background: #4caf50;
+  border-color: #4caf50;
+}
+
+.stepIcon.current {
+  background: #4caf50;
+  border-color: #4caf50;
+}
+
+.checkIcon {
+  color: white;
+  width: 18px;
+  height: 18px;
+}
+
+.stepNumber {
+  color: #646669;
+  font-weight: 500;
+}
+
+.verticalLine {
+  position: absolute;
+  left: 15px;
+  top: 32px;
+  height: calc(100% + 24px);
+  width: 2px;
+  background: #e0e0e0;
+}
+
+.lineActive {
+  background: #4caf50;
+}
+
+.stepperRight {
+  flex: 1;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #eee;
+}
+
+.statusHeader {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 8px;
+}
+
+.statusTitle {
+  margin: 0;
+  font-size: 16px;
+  color: #212121;
+}
+
+.statusDate {
+  color: #757575;
+  font-size: 14px;
+}
+
+.statusComment {
+  margin: 8px 0 0;
+  color: #616161;
+  font-size: 14px;
+}
+
+.currentStatus {
+  margin-top: 8px;
+}
+
+.statusBadge {
+  background: #e3f2fd;
+  color: #1976d2;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+/* -------- */

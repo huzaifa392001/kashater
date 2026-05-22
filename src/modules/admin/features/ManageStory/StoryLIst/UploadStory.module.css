@@ -1,0 +1,274 @@
+.header_table {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.header_table_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0rem 0rem;
+  flex-wrap: wrap;
+}
+
+.header_table h3 {
+  font-family: var(--font-bold);
+  font-size: 24px;
+  font-weight: bold;
+  /* font-stretch: normal; */
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000;
+}
+
+.breadcrumb {
+  margin-bottom: 0.5rem;
+  color: #848484;
+  font-family: var(--font-regular);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  /* margin: 20px 0px; */
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.breadcrumb .active {
+  color: #01050c;
+  font-family: var(--font-medium);
+  font-weight: 500;
+  cursor: default !important;
+}
+
+.breadcrumb span {
+  cursor: pointer;
+}
+
+.main {
+  margin: 24px 0 0;
+  padding: 24px 40px 23px 24px;
+  border-radius: 4px;
+  border: solid 1px #e6e6e6;
+  background-color: #fff;
+  margin-bottom: 6rem;
+}
+
+.main_box {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 24px;
+}
+
+.left_side {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* StoryForm.module.css */
+/* .container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Arial', sans-serif;
+} */
+
+.formRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.inputGroup {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.selectInput,
+.textInput,
+.textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.textarea {
+  resize: vertical;
+}
+
+.divider {
+  height: 1px;
+  background-color: #eee;
+  margin: 2rem 0;
+}
+
+.priceRow {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.currencyInput {
+  position: relative;
+}
+
+.currencySymbol {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666;
+}
+
+.currencyInput input {
+  width: 100%;
+  padding: 0.8rem 0.8rem 0.8rem 2rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.characterSection {
+  margin-top: 1.5rem;
+}
+
+.characterRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.characterInput {
+  margin-bottom: 1rem;
+}
+
+.characterType {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.removeButton {
+  background: none;
+  border: none;
+  color: #666;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0 0.5rem;
+  position: absolute;
+  right: 0;
+}
+
+.removeButton2 {
+  background: none;
+  border: none;
+  color: #666;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0 0.5rem;
+  /* position: absolute; */
+  right: 0;
+}
+
+
+.addButton {
+  font-family: var(--font-medium);
+  font-size: 14px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #1d85f3;
+  cursor: pointer;
+}
+
+.sectionTitle {
+  font-family: var(--font-medium);
+  font-size: 14px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #01050c;
+}
+
+.mrg_butom_1rem {
+  margin-bottom: 1rem;
+}
+
+.upload_set {
+  margin-top: 1rem;
+  display: flex;
+  gap: 20px;
+}
+
+.section {
+  position: relative;
+}
+
+.section2 {
+  display: flex;
+  justify-content: end;
+}
+
+.autoRenewal {
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+
+.fieldHeader {
+  font-family: var(--font-regular-Quicksand);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
+.autoRenewal .switchSection {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  margin-top: 10px;
+  margin-bottom: 10px;
+  gap: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .formRow,
+  .priceRow,
+  .characterRow {
+    grid-template-columns: 1fr;
+  }
+
+  .mainTitle {
+    font-size: 1.75rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.3rem;
+  }
+}

@@ -1,0 +1,25 @@
+.loginFrom .loginHeader {
+  text-align: center;
+  padding: 6px 0px;
+  margin-top: 0.5rem;
+}
+.loginFrom form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.loginHeader h3 {
+  font-family: var(--font-bold);
+  color: var(--text-color-dark);
+  line-height: 36px;
+  font-weight: 700;
+  font-size: 24px;
+}
+.loginHeader > p {
+  line-height: 18px;
+  font-weight: 400;
+  font-size: 13px;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+  text-align: start;
+}

@@ -1,0 +1,36 @@
+.profile {
+  display: flex;
+  align-items: center;
+  /* gap: 1rem; */
+}
+
+.profile_name p {
+  margin: 0px;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.2px;
+  font-family: var(--font-Medium);
+  font-weight: 500;
+  color: var(--text-color-light);
+}
+
+.profile_name button {
+  margin: 0px;
+  padding: 0px;
+  font-size: 14px;
+  line-height: 15px;
+  letter-spacing: -0.2px;
+  font-family: var(--font-regular);
+  font-weight: 500;
+  color: var(--text-color);
+  text-transform: none;
+  justify-content: start !important;
+}
+
+.menuicon {
+  margin-right: 5px;
+}
+
+.profile_list {
+  padding: 10px 20px;
+}

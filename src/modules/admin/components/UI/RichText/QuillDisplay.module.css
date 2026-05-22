@@ -1,0 +1,8 @@
+.quill-display-container ol li {
+  list-style: auto !important;
+  margin-left: 1.5rem;
+}
+.quill-display-container ul li {
+  list-style: auto !important;
+  margin-left: 1.5rem;
+}

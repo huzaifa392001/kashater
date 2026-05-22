@@ -1,0 +1,90 @@
+.carouselWrapper {
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+  color: white;
+  text-align: center;
+}
+
+.header h2 {
+  font-size: 48px;
+  font-family: var(--font-bold);
+  margin-bottom: 0.5rem;
+}
+
+.header p {
+  font-size: 20px;
+
+  color: #ccc;
+}
+
+.slider {
+  margin-top: 2rem;
+  position: relative;
+}
+
+.slide {
+  display: flex !important;
+  background: transparent;
+  border-radius: 12px;
+  overflow: hidden;
+  align-items: stretch;
+  justify-content: center;
+  height: 300px;
+}
+
+.imageBox {
+  min-width: 400px;
+  width: 400px;
+  background-color: #eee;
+}
+
+.imageBox img {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+}
+
+.textBox {
+  flex: 1;
+  background-color: #4cc0b9;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-bold);
+  padding: 1rem;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.nextArrow,
+.prevArrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  /* background: white; */
+  color: black;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.nextArrow {
+  right: -50px;
+}
+
+.prevArrow {
+  left: -50px;
+}
+.nextArrow > img {
+  transform: rotate(180deg);
+}

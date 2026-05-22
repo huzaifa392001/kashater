@@ -1,0 +1,89 @@
+.phone-wrapper {
+    width: 100%;
+}
+
+/* Main container */
+.phone-container {
+    width: 100% !important;
+    background: transparent;
+}
+
+/* Input field */
+.phone-input {
+    width: 100% !important;
+    background: transparent !important;
+    border: 1px solid #322838 !important;
+    border-bottom: 2px solid #d1c4e9 !important;
+    /* light purple line */
+    border-radius: 0 !important;
+    height: 56px !important;
+    font-size: 16px !important;
+    color: white !important;
+    padding-left: 60px !important;
+}
+
+/* Focus effect */
+.phone-input:focus {
+    border: 1px solid #86b7fe !important;
+    border-bottom: 2px solid #d1c4e9 !important;
+    box-shadow: none !important;
+}
+
+.eror-line {
+    border: 1px solid red !important;
+}
+
+.eror-line:focus {
+    border: 1px solid red !important;
+}
+
+.phone-input:hover {
+    border: 1px solid #000 !important;
+    border-bottom: 2px solid #d1c4e9 !important;
+}
+
+/* Placeholder */
+.phone-input::placeholder {
+    color: #d1c4e9;
+}
+
+/* Flag dropdown area */
+.phone-flag {
+    background: transparent !important;
+    border: none !important;
+}
+
+/* Label styling */
+.phone-container .special-label {
+    color: #d1c4e9 !important;
+    font-size: 14px !important;
+    top: -8px !important;
+    left: 0 !important;
+}
+
+/* Remove default box shadow */
+.phone-container input:focus {
+    box-shadow: none !important;
+}
+
+/* Dropdown container */
+.phone-container .country-list {
+    background-color: white !important;
+}
+
+/* Country name text */
+.phone-container .country-list .country {
+    color: black !important;
+}
+
+/* Highlighted / hover item */
+.phone-container .country-list .country:hover {
+    background-color: #f1f1f1 !important;
+    color: black !important;
+}
+
+/* Selected country */
+.phone-container .country-list .country.highlight {
+    background-color: #e0e0e0 !important;
+    color: black !important;
+}

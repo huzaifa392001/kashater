@@ -1,0 +1,127 @@
+.login_page {
+  background: url("../../assets/image/png/bgr.png");
+  background-size: cover;
+  /* Ensures image covers the full area */
+  background-position: center;
+  /* Keeps image centered */
+  background-repeat: no-repeat;
+  /* height: 100vh; */
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.login_btn {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 15px 10px;
+  background-color: var(--orange);
+  color: #000000;
+  font-size: 14px;
+  font-family: var(--semiBold);
+  border-radius: 4px;
+  margin-top: 3rem;
+  cursor: pointer;
+}
+
+.forgot {
+  cursor: pointer;
+  text-align: end;
+  font-size: 12px;
+  color: var(--text-color-light);
+  font-family: var(--regular);
+}
+
+.forgot a {
+  font-size: 12px;
+  color: var(--text-color-light);
+  font-family: var(--regular);
+}
+
+.login_container {
+  background: linear-gradient(180deg, #00000078 0%, #bc51ff7d 100%);
+  border-radius: 16px;
+  padding: 55px 32px;
+  color: #000000;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  border: 1px solid #5B2E7E;
+}
+
+.validate-input {
+  padding-bottom: 1rem;
+}
+
+.validate-input:nth-child(2) {
+  padding-bottom: 1.8rem;
+}
+
+.login_titel {
+  padding-bottom: 1.5rem;
+  padding-top: 2rem;
+}
+
+.login_titel h3 {
+  text-align: center;
+  font-family: var(--semiBold);
+  font-size: 18px;
+  color: var(--text-color);
+  padding-bottom: 0.6rem;
+  text-transform: uppercase;
+}
+
+.login_titel p {
+  text-align: center;
+  font-family: var(--regular);
+  font-size: 14px;
+  color: var(--text-color-light);
+}
+
+.btn_spiner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.login_logo {
+  width: 100%;
+}
+
+.visibility {
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.login_container_heder {
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .login_page {
+    padding: 2rem;
+    background-position: top;
+  }
+
+  .login_container {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 500px) {
+  .login_page {
+    padding: 1rem;
+    background-position: top;
+  }
+
+  .login_container {
+    width: 100%;
+    max-width: 400px;
+    padding: 26px;
+  }
+}

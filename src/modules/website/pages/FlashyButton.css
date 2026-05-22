@@ -1,0 +1,333 @@
+/* .train-border-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 36px;
+    border-radius: 40px;
+    color: #5c2d91;
+    font-weight: 600;
+    font-size: 18px;
+    background: #fff;
+    cursor: pointer;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(92, 45, 145, 0.2);
+    border: 2px solid transparent;
+}
+
+.train-border-btn img,
+.train-border-btn span {
+    position: relative;
+    z-index: 2;
+}
+
+/* faint static border 
+.train-border-btn::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 40px;
+    border: 2px solid rgba(92, 45, 145, 0.15);
+    z-index: 1;
+}
+
+/* animated "train" border line 
+.train-border-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: #5c2d91;
+    border-radius: 40px;
+    animation: borderTrain 4s linear infinite;
+    z-index: 3;
+}
+
+/* keyframes - move around rectangle smoothly 
+@keyframes borderTrain {
+    0% {
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 2px;
+    }
+
+    20% {
+        width: 100%;
+        height: 2px;
+        /* move across top 
+    }
+
+    25% {
+        width: 2px;
+        height: 2px;
+        top: 0;
+        left: calc(100% - 2px);
+        /* pause top-right corner 
+    }
+
+    45% {
+        width: 2px;
+        height: 100%;
+        /* move down right edge 
+        top: 0;
+        left: calc(100% - 2px);
+    }
+
+    50% {
+        top: calc(100% - 2px);
+        left: calc(100% - 2px);
+        width: 2px;
+        height: 2px;
+        /* pause bottom-right 
+    }
+
+    70% {
+        width: 100%;
+        height: 2px;
+        top: calc(100% - 2px);
+        left: 0;
+        /* move across bottom 
+    }
+
+    75% {
+        width: 2px;
+        height: 2px;
+        top: calc(100% - 2px);
+        left: 0;
+        /* pause bottom-left 
+    }
+
+    95% {
+        width: 2px;
+        height: 100%;
+        top: 0;
+        left: 0;
+        /* move up left edge 
+    }
+
+    100% {
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 2px;
+    }
+} */
+
+
+
+.train-border-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 12px;
+    color: #6c2dbf;
+    font-weight: 600;
+    font-size: 16px;
+    background: transparent;
+    cursor: pointer;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(92, 45, 145, 0.2);
+    border: 0px solid transparent;
+    font-family: var(--font-semibold-Quicksand);
+}
+
+.train-border-btn span {
+    position: relative;
+    /* z-index: 2; */
+    font-weight: 600;
+    font-size: 16px;
+    font-family: var(--font-semibold-Quicksand);
+}
+
+.train-border-btn span::after {
+    content: "";
+    position: absolute;
+    bottom: 3px;
+    left: 0;
+    width: 100%;
+    height: 1.5px;
+    background: #5c2d91;
+}
+
+.train-border-btn img {
+    height: 12px;
+}
+
+.train-border-btn img,
+.train-border-btn span {
+    position: relative;
+    /* z-index: 2; */
+}
+
+/* faint static border */
+.train-border-btn::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 2px solid rgba(92, 45, 145, 0.15);
+    /* z-index: 1; */
+}
+
+/* animated train line */
+.train-border-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: #5c2d91;
+    animation: borderTrain 4s linear infinite;
+    /* z-index: 3; */
+}
+
+/* keyframes for rectangular motion */
+@keyframes borderTrain {
+    0% {
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 2px;
+    }
+
+    20% {
+        width: 100%;
+        height: 2px;
+        /* move across top */
+    }
+
+    25% {
+        width: 2px;
+        height: 2px;
+        top: 0;
+        left: calc(100% - 2px);
+        /* pause top-right */
+    }
+
+    45% {
+        width: 2px;
+        height: 100%;
+        /* move down right edge */
+        top: 0;
+        left: calc(100% - 2px);
+    }
+
+    50% {
+        top: calc(100% - 2px);
+        left: calc(100% - 2px);
+        width: 2px;
+        height: 2px;
+        /* pause bottom-right */
+    }
+
+    70% {
+        width: 100%;
+        height: 2px;
+        top: calc(100% - 2px);
+        left: 0;
+        /* move across bottom */
+    }
+
+    75% {
+        width: 2px;
+        height: 2px;
+        top: calc(100% - 2px);
+        left: 0;
+        /* pause bottom-left */
+    }
+
+    95% {
+        width: 2px;
+        height: 100%;
+        top: 0;
+        left: 0;
+        /* move up left edge */
+    }
+
+    100% {
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 2px;
+    }
+}
+
+
+
+.train-border-btn2 {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 12px;
+    color: #6c2dbf;
+    font-weight: 600;
+    font-size: 16px;
+    background: transparent;
+    cursor: pointer;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(92, 45, 145, 0.2);
+    border: 0px solid transparent;
+    font-family: var(--font-semibold-Quicksand);
+
+
+    /* animation */
+    animation: autoZoom 2s ease-in-out infinite;
+}
+
+/* Zoom in and out effect */
+@keyframes autoZoom {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+        /* Light-a zoom aagum */
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.train-border-btn2 span {
+    position: relative;
+    /* z-index: 2; */
+    font-weight: 600;
+    font-size: 16px;
+    font-family: var(--font-semibold-Quicksand);
+}
+
+.train-border-btn2 span::after {
+    content: "";
+    position: absolute;
+    bottom: 3px;
+    left: 0;
+    width: 100%;
+    height: 1.5px;
+    background: #5c2d91;
+}
+
+.train-border-btn2 img {
+    height: 12px;
+}
+
+.train-border-btn2 img,
+.train-border-btn2 span {
+    position: relative;
+    /* z-index: 2; */
+}
+
+/* faint static border */
+.train-border-btn2::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 2px solid rgba(92, 45, 145, 0.15);
+    /* z-index: 1; */
+}

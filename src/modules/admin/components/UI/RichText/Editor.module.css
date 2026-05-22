@@ -1,0 +1,37 @@
+.toolbar {
+  margin-top: 0.5rem;
+}
+
+.text-editor {
+  width: 1086px;
+  margin: 0 auto;
+}
+
+.ql-editor {
+  min-height: 100px;
+}
+
+.textarea_box {
+  position: relative;
+}
+
+.textarea_box .ql-container.ql-snow {
+  padding: 30px;
+}
+
+.textarea_box .lable_text {
+  font-family: var(--regular);
+  position: absolute;
+  background-color: #ffff;
+  font-weight: 400;
+  color: #7f8389;
+  font-size: 12px;
+  left: 10px;
+  top: -6px;
+  padding: 0px 4px;
+  z-index: 1;
+}
+
+[data-pc-section="toolbar"] {
+  display: none !important;
+}

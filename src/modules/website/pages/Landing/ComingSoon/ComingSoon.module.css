@@ -1,0 +1,70 @@
+.comingSoonSection {
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #ffffff;
+}
+
+.booksGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  margin-top: 50px;
+}
+
+.bookCard {
+  border-radius: 12px;
+  max-width: 560px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bookCard:hover {
+  transform: translateY(-5px);
+  /* box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); */
+}
+
+.bookImage {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.bookTitle {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.bookAuthor {
+  font-size: 0.9rem;
+  color: #cccccc;
+  margin-top: 0.25rem;
+}
+
+/* Responsive spacing */
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .booksGrid {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.25rem;
+  }
+
+  .bookTitle {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,79 @@
+.phone-input__container .phone-input__input {
+  border-radius: 50px;
+  font-family: var(--primary-font);
+  padding: 12px 14px 12px 58px;
+  width: 100%;
+  height: auto;
+  box-shadow: none;
+  background-color: #ffffff48;
+  color: #fff !important;
+  border: none !important;
+}
+.phone-input__container .phone-input__input:focus{
+  background-color: #ffffff48 !important;
+  border: none !important;
+}
+.phone-input__input::placeholder {
+  color: #fff !important;
+}
+
+.phone-input__container>div:first-child {
+  font-family: var(--primary-font);
+  color: var(--primary-dark);
+  top: -9px;
+  left: 8px;
+  font-size: 12px;
+}
+
+.phone-input__container:focus-within>div:first-child {
+  color: var(--primary-dark);
+}
+
+.phone-input__container .phone-input__input:focus {
+  border-color: var(--secondary-dark);
+  box-shadow: 0 0 0 1px var(--light-gray);
+}
+
+.phone-input__container.error>div:first-child {
+  font-family: var(--primary-font);
+  color: #cd3232;
+  top: -9px;
+  left: 8px;
+  font-size: 12px;
+}
+
+.phone-input__container.error:focus-within>div:first-child {
+  color: #cd3232;
+}
+
+/* .phone-input__container.error .phone-input__input:focus {
+  box-shadow: 0 0 0 1px #cd3232;
+} */
+
+.phone-input__container .special-label {
+  display: none !important;
+}
+
+.phone-input__container .special-label {
+  display: none !important;
+}
+
+.phone-input__dropdown {
+  /* background-color: #fff !important; */
+  border-radius: 12px !important;
+  border: 1px solid #333 !important;
+  color: #000 !important;
+}
+
+.phone-input__dropdown .country {
+  color: #ffffff !important;
+  padding: 8px 12px;
+}
+
+.phone-input__dropdown .country:hover {
+  background-color: #333333 !important;
+}
+
+.phone-input__dropdown .country.highlight {
+  background-color: #0d0d0d !important;
+}

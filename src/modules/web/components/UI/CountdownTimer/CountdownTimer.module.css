@@ -1,0 +1,31 @@
+.session_exp {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.session_set {
+  color: rgb(231 67 71);
+  background: rgb(245 213 213);
+  margin-bottom: 1rem;
+  padding: 10px 10px;
+  font-family: var(--font-semibold);
+  font-size: 14px;
+  border-radius: 5px;
+}
+.session_icon {
+  background: rgb(231 67 71);
+  height: fit-content;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+}
+.session_icon img {
+  width: 17px;
+}
+.time_count {
+  font-family: var(--font-semibold);
+  font-size: 14px;
+  font-weight: 900;
+}

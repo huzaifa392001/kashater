@@ -1,0 +1,46 @@
+.hero {
+  text-align: center;
+  padding: 3rem 2rem;
+  background-image: url("/background.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  font-family: var(--font-semibold);
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  font-family: var(--font-regular-Quicksand);
+}
+
+.searchInput {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+}
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+@media (max-width: 576px) {
+  .hero {
+    padding: 1rem 1rem;
+  }
+}

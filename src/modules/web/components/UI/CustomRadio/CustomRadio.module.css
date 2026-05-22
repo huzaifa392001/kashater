@@ -1,0 +1,26 @@
+.customRadio {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #761E7F;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  position: relative;
+  /* margin-top: 10px;
+  margin-right: 10px; */
+}
+
+.radioSelected {
+  /* border-color: #fff; */
+  border-color: #761E7F;
+}
+
+.radioDot {
+  width: 10px;
+  height: 10px;
+  background-color: #761E7F;
+  border-radius: 50%;
+}

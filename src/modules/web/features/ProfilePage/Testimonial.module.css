@@ -1,0 +1,58 @@
+.section {
+  padding: 1.5rem;
+  width: 80%;
+}
+
+.sectionTitle {
+  font-family: var(--font-semibold-Inte);
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
+.Mark {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  font-family: var(--font-regular-Quicksand);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  color: #b1b3b5;
+  margin-top: 1rem;
+}
+.Mark p {
+  font-family: var(--font-regular-Quicksand);
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.continueBtn {
+  margin-top: 1rem;
+  background: linear-gradient(to right, #fff04d, #ffcf48);
+  padding: 0.75rem 1.5rem;
+  width: 100%;
+  border: none;
+  border-radius: 100px;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: var(--font-regular-Quicksand);
+}
+.continueBtn:disabled {
+  background: #ccc;
+  color: #666;
+  cursor: not-allowed;
+}
+
+.width_cont {
+  width: fit-content !important;
+  text-wrap: nowrap;
+}
+
+@media (max-width: 768px) {
+  .section {
+    width: 100%;
+  }
+}

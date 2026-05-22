@@ -1,0 +1,234 @@
+.successContainer {
+  color: #fff;
+  padding-bottom: 3rem;
+  position: relative;
+  z-index: 5;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.header h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.header p {
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #7e7e7e;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+.name_addres {
+  font-family: var(--font-semibold);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #fff;
+  margin-bottom: 0.6rem;
+}
+.label {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #7e7e7e;
+  margin-bottom: 0.5rem;
+}
+.label_cont {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #7e7e7e;
+  margin-bottom: 0.4rem;
+}
+.label_1 {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #7e7e7e;
+  margin-bottom: 1rem;
+}
+
+.cardRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.summary div {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.25rem 0;
+  margin-top: 0.9rem;
+  /* color: #eee; */
+}
+
+.total {
+  font-weight: 700;
+  font-size: 1rem;
+  margin-top: 0.9rem;
+  border-top: 1px solid #444;
+  padding-top: 1rem;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+.total span {
+  padding-top: 0.9rem;
+}
+.divider {
+  margin: 2rem 0;
+  border: none;
+  height: 1px;
+  background: #333;
+}
+
+.productsLabel {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.items {
+  font-size: 0.875rem;
+  color: #ccc;
+  margin-bottom: 1rem;
+}
+
+.productTable {
+  background-color: #111;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.tableHeader,
+.productRow {
+  display: grid;
+  grid-template-columns: 1fr 0.5fr 0.5fr 0.5fr;
+  padding: 0.5rem;
+  align-items: center;
+  color: #ccc;
+  font-size: 0.875rem;
+}
+
+.tableHeader {
+  background-color: #222;
+  font-weight: 600;
+  /* border-bottom: 1px solid #444; */
+}
+
+.productRow {
+  background-color: #000000;
+  border-bottom: 1px solid #444;
+}
+
+.productInfo {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.productInfo img {
+  width: 60px;
+  height: auto;
+  border-radius: 4px;
+}
+
+.buttonWrapper {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.continueBtn {
+  margin-top: 1rem;
+  background: linear-gradient(to right, #fff04d, #ffcf48);
+  padding: 0.75rem 1.5rem;
+  width: 340px;
+
+  border: none;
+  border-radius: 100px;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: var(--font-regular-Quicksand);
+}
+
+.continueBtn:hover {
+  opacity: 0.8;
+}
+.Preview a {
+  font-family: var(--font-semibold);
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-decoration: underline;
+  text-decoration-style: solid;
+  text-decoration-offset: 0%;
+  text-decoration-thickness: 0%;
+  text-decoration-skip-ink: auto;
+  color: #ffffff;
+  cursor: pointer;
+}
+.carouselContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.viw_book_title {
+  margin-top: 1rem;
+}
+.viw_book_title h3 {
+  font-family: var(--font-semibold);
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  font-variant: small-caps;
+  color: #ffff;
+  text-align: center;
+}
+.viw_book_title p {
+  font-family: var(--font-regular);
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #ffffff;
+  opacity: 0.6;
+}
+
+@media (max-width: 500px) {
+  .productTable_main {
+    overflow: hidden;
+    overflow-x: scroll;
+  }
+  .productTable {
+    min-width: 400px;
+  }
+  .continueBtn {
+    width: 100%;
+  }
+}
+@media (max-width: 400px) {
+}

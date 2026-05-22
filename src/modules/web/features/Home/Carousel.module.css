@@ -1,0 +1,102 @@
+.book-card {
+  padding: 1rem;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+.book-card.expanded {
+  background-color: #1e1e1e;
+}
+.bookImageContainer {
+  min-width: 109px;
+  max-width: 179px;
+}
+.carouselHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.carouselHeader h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.carouselHeader a {
+  color: #fff;
+  font-weight: 500;
+  text-decoration: none;
+}
+.book-card img {
+  width: 100%;
+  border-radius: 12px;
+  max-height: 144px;
+  object-fit: cover;
+}
+
+.book-title {
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: start;
+  margin: 0.5rem 0;
+}
+
+.book-info {
+  background-color: #2c2c2c;
+  border-radius: 12px;
+  padding: 0.75rem;
+  margin-top: 0.5rem;
+  animation: fadeIn 0.3s ease;
+  color: white;
+  text-align: center;
+}
+
+.book-desc {
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+  text-align: start;
+}
+
+.book-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-generate,
+.btn-view {
+  padding: 0.4rem 0.8rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-generate {
+  background: #ffd700;
+  color: #000;
+}
+
+.btn-view {
+  background: #333;
+  color: #fff;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

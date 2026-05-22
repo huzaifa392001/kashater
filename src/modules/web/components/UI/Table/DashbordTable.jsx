@@ -1,0 +1,124 @@
+
+import React from 'react';
+import DataTable from 'react-data-table-component';
+import styled from 'styled-components';
+import classes from './Table.module.css';
+import Loader from '../Loader/Loader';
+
+
+const customStyles = {
+    rows: {
+        style: {
+            minHeight: '64px', // override the row height
+        },
+    },
+    headCells: {
+        style: {
+            padding: '0px 8px ', // override the cell padding for head cells
+            backgroundColor: '#F9F9F9',
+            fontSize: '13px',
+            textTransform: 'uppercase',
+            fontFamily: 'Medium',
+            color: '#7F8389',
+            borderBottomStyle: "unset",
+            borderTopRightRadius: "5px",
+            borderTopLeftRadius: '5px',
+            borderBottomColor: 'transparent',
+            minWidth: '100px !important',
+        },
+    },
+    cells: {
+        style: {
+            padding: '8px',
+            fontSize: '14px',
+            fontFamily: 'Regular',
+            color: '#000000',// override the cell padding for data cells
+            // border: '2px dashed #D0D5D8 ',
+
+        },
+    },
+    pagination: {
+        style: {
+            backgroundColor: 'transparent',
+            borderTopStyle: 'unset',
+            position: 'absolute',
+            bottom: '-55px',
+            left: '0',
+            paddingRight: '0',
+            paddingLeft: '0',
+        },
+    },
+};
+
+const CustomsTable = styled(DataTable)`
+
+&::-webkit-scrollbar {
+    height: 8px; 
+    width: 0px; 
+    display: block !important;
+    
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+
+ 
+  &::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 4px; 
+  }
+
+  
+  &::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+.rdt_TableHeadRow {
+    border-bottom: 1px solid transparent;
+    min-height: 44px;
+}
+
+.kdMScy {
+    font-size: 13px;
+    text-transform: uppercase;
+    font-family: var(--medium);
+
+}
+
+.rdt_TableRow:not(:last-of-type) {
+    border-bottom-style: dashed;
+    border-bottom-width: 1px;
+    border-bottom-color: rgba(0, 0, 0, .12);
+}
+
+.rdt_TableCell {
+    font-family: var(--regular);
+    font-size: 14px;
+    color: #000000;
+}
+
+
+`;
+
+
+const CustomTable = ({ data, columns, loader }) => {
+
+    return (
+        <div className={classes.relative_table}>
+            <CustomsTable
+                columns={columns}
+                data={data}
+                customStyles={customStyles}
+                progressPending={loader}
+                progressComponent={<Loader />}
+                fixedHeader
+                fixedHeaderScrollHeight='580px'
+
+            />
+        </div>
+    );
+};
+
+export default CustomTable;
+

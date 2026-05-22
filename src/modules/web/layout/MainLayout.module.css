@@ -1,0 +1,180 @@
+.homeContainer {
+  display: flex;
+  flex-direction: column;
+  /* background-color: #0f1114; */
+  color: #ffffff;
+  background-image: linear-gradient(350deg,
+      hsl(0deg 0% 0%) 1%,
+      hsl(0deg 0% 7%) 51%,
+      hsl(0deg 0% 14%) 61%,
+      hsl(0deg 0% 21%) 66%,
+      hsl(0deg 0% 29%) 69%,
+      hsl(0deg 0% 36%) 70%,
+      hsl(0deg 0% 43%) 72%,
+      hsl(0deg 0% 50%) 73%,
+      hsl(0deg 0% 57%) 75%,
+      hsl(0deg 0% 64%) 77%,
+      hsl(0deg 0% 71%) 80%,
+      hsl(0deg 0% 79%) 84%,
+      hsl(0deg 0% 86%) 88%,
+      hsl(0deg 0% 93%) 94%,
+      hsl(0deg 0% 100%) 100%),
+    url("../assets/image/png/BackgroundImage.png");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  overflow: scroll;
+  background-blend-mode: multiply;
+  /* or overlay, screen, darken, etc. */
+}
+
+.homeContainer2 {
+  position: relative;
+  z-index: 0;
+  height: 100vh;
+  overflow: scroll;
+}
+
+.homeContainer3 {
+  position: relative;
+  z-index: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.homeContainer3::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  background-color: #000;
+  /* dark overlay to enhance contrast */
+  background-blend-mode: multiply;
+
+  z-index: -1;
+  pointer-events: none;
+}
+
+.homeContainer2::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-image: url("../../web/assets/image/png/bg_colors.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.6);
+  /* dark overlay to enhance contrast */
+  background-blend-mode: multiply;
+
+  z-index: -1;
+  pointer-events: none;
+}
+
+.homeContainer2::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 400px;
+  height: 600px;
+  background-image: linear-gradient(to top,
+      #000000,
+      #000000,
+      #000000,
+      #000000,
+      #ffffff00);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.main-content {
+  /* margin-top: 5rem; */
+  height: 100vh;
+  /* overflow: auto; */
+  background-color: #fff;
+
+  /* Force vertical scroll AND reserve space */
+  width: 100%;
+  overflow-y: scroll !important;
+  overflow-x: hidden;
+  scrollbar-gutter: stable;
+  /* scrollbar-gutter: stable both-edges; */
+  /* Both edges reserve space for balance */
+  background-color: #fff;
+  position: relative;
+
+  /* Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: #6E2E92 #f1f1f1;
+}
+
+/* Webkit-ku force visible state */
+.main-content::-webkit-scrollbar {
+  width: 10px !important;
+  height: 10px !important;
+  display: block !important;
+  /* Force render */
+}
+
+.main-content::-webkit-scrollbar-track {
+  background: #f1f1f1 !important;
+  /* Solid color track (Visible always) */
+  border-radius: 10px;
+}
+
+.main-content::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #6E2E92, #FF00EE, #6E2E92) !important;
+  border-radius: 10px;
+  border: 2px solid #f1f1f1;
+  /* Padding around thumb */
+}
+
+/* User interaction-ku change */
+.main-content::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #5a2577, #d400c5, #5a2577) !important;
+}
+
+.extraBackground {
+  background-color: #1e1e1e;
+  backdrop-filter: blur(10px);
+}
+
+@media (max-width: 1024px) {
+  .header {
+    padding: 16px 57px;
+  }
+
+  /* .main-content {
+    padding: 0px 57px;
+  } */
+}
+
+@media (max-width: 992px) {
+  /* .main-content {
+    padding: 0px 42px;
+  } */
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    /* padding: 0px 30px; */
+    /* margin-top: 4rem; */
+  }
+}
+
+@media (max-width: 576px) {
+  /* .main-content {
+    padding: 0px 20px;
+  } */
+}

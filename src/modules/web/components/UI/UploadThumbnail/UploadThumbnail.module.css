@@ -1,0 +1,461 @@
+/* .inputs_box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 14px 0px;
+  width: 100%;
+}
+
+.contaniner {
+  width: 450px;
+  padding: 10px 0px;
+}
+
+.contaniner__box {
+  width: 100%;
+  padding: 10px 0px;
+}
+
+.thumblin_uplode {
+  margin: 0;
+  padding: 0;
+  width: 29px;
+}
+
+.input_position {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.checkbox_box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.module_text {
+  padding: 20px 0px;
+  font-size: 12px;
+  color: #7f8389;
+  font-family: var(--regular);
+}
+
+.mrg_top_poppup {
+  margin-top: 2rem;
+}
+
+.module_text {
+  font-size: 15.5px;
+  color: #474747;
+  font-family: "Semibold";
+  padding: 5px 0px;
+}
+
+.video_add_titel {
+  font-size: 16px;
+  color: #474747;
+  font-family: "Semibold";
+  padding: 5px 0px;
+  padding-bottom: 0.8rem;
+}
+
+.module__text_Container {
+  display: grid;
+
+  grid-template-columns: repeat(4, 100px);
+  gap: 2rem;
+  padding: 0.6rem 0rem;
+  row-gap: 1.5rem;
+}
+
+.module__text_Container_two {
+  display: grid;
+  grid-template-columns: 150px 150px;
+  gap: 1rem;
+  padding: 0.6rem 0rem;
+  row-gap: 1.5rem;
+}
+
+.report_box {
+  border: 2px dashed #cccccc;
+  padding: 20px 0px;
+}
+
+.contaniner__box_set {
+  padding: 0.6rem 0rem;
+}
+
+.contant_box_titel {
+  font-size: 12px;
+  color: #7f8389;
+  font-family: var(--regular);
+  padding: 3px 0px;
+}
+
+.contant_box_sub {
+  font-size: 14px;
+  color: #000000;
+  font-family: var(--regular);
+  padding: 3px 0px;
+  word-wrap: break-word;
+}
+
+.marg_top_1rem {
+  margin-top: 1rem;
+}
+
+.publishText {
+  opacity: 1;
+  color: rgba(9, 9, 9, 1);
+  font-family: var(--regular);
+  font-size: 14px;
+  font-weight: 400;
+  font-style: Regular;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+.approveContainer {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.p_top_1rem {
+  padding-top: 0.6rem;
+}
+
+.radio_btn_set {
+  display: flex;
+  gap: 1rem;
+  margin: 14px 0px;
+}
+
+.textarea_contoner {
+  margin-top: 2rem;
+}
+
+.action_btn_reason {
+  font-size: 14px;
+  font-family: var(--regular);
+  color: #000000;
+  padding: 5px 0px;
+  word-wrap: break-word;
+}
+
+.overflow_cont {
+  max-height: 200px;
+  overflow-y: scroll;
+  cursor: move;
+}
+
+.formTitle {
+  opacity: 1;
+  color: rgba(0, 0, 0, 1);
+  font-family: "SourceSansPro-SemiBold";
+  font-size: 20px;
+  font-style: normal;
+  letter-spacing: 0px;
+  text-align: left;
+  padding-bottom: 30px;
+}
+
+.uploadedImage {
+  background-size: cover;
+  border-radius: 4.8px;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 8px;
+  position: relative;
+  max-width: 200px;
+  height: 155px;
+  width: 120px;
+  height: 120px;
+  border-radius: 4px;
+}
+
+.videoThumbnailContainer {
+  max-width: 100%;
+  height: 155px;
+}
+
+.deleteContainer {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: #fff;
+  height: 20px;
+  width: 20px;
+  border-radius: 100%;
+  text-align: center;
+  cursor: pointer;
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+.uploadedImage:hover .fildeleteContainerePreview {
+  opacity: 1;
+}
+.reuploadContainer {
+  display: flex;
+  gap: 10px;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin: 0px auto;
+  padding: 2px 8px;
+  cursor: pointer;
+}
+
+.reuploadLabeText {
+  font-family: var(--font-bold);
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.uploadInput {
+  display: none;
+}
+
+.upload {
+  max-width: 100%;
+  text-align: center;
+  height: 155px;
+  width: 100%;
+  border-radius: 4.8px;
+  border: 2px dashed #cccccc;
+  opacity: 1;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  width: 120px;
+  height: 120px;
+  border-radius: 4px;
+}
+
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color: #e9ecef;
+}
+
+.upload:hover:not(.disabled) {
+  border-color: #007bff;
+  background-color: #fff;
+}
+
+.uploadLabel {
+  opacity: 1;
+  color: rgba(0, 0, 0, 0.656427);
+  font-family: var(--regular);
+  font-size: 12px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0px;
+  text-align: left;
+  padding-top: 4.4px;
+}
+
+.layout_gap {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.profile_img {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin: 0.5rem 0rem;
+}
+
+.profile_img_contaner {
+  width: 37px;
+}
+
+.profile_img_contaner img {
+  width: 100%;
+  aspect-ratio: 3/3;
+  border-radius: 100%;
+}
+
+.report_boxs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.report_box_two {
+  padding: 20px 0px;
+}
+
+.contant_box_titel {
+  font-family: var(--font-Medium);
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.video-container {
+  position: relative;
+  max-width: 100%;
+  max-height: 172px;
+}
+
+.video-container video {
+  width: 100%;
+  border-radius: 5px;
+  max-height: 172px;
+}
+
+.deletepotion {
+  position: absolute;
+}
+
+.reulode {
+  position: absolute;
+}
+
+.imgeulodeeeee {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+}
+
+.uploadedImage {
+  position: relative;
+}
+
+.contant_photo {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.5em;
+}
+
+.contant_photo_img {
+}
+
+.contant_photo_img {
+  width: 19%;
+  aspect-ratio: 2/2;
+}
+
+@media screen and (max-width: 1208px) {
+  .login_btn {
+    position: unset;
+  }
+}
+
+@media screen and (max-width: 949px) {
+  .login_btn {
+    position: unset;
+  }
+} */
+
+.uploadLabel {
+  display: block;
+  cursor: pointer;
+}
+
+.previewContainer {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border: 0.8px dashed #ffffff99;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.previewImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlayControls {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 8px;
+  /* background: rgba(0, 0, 0, 0.6); */
+}
+
+.deleteButton {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  background-color: #ddd;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 8px;
+  right: 6px;
+  z-index: 4;
+  border-radius: 50%;
+}
+
+.deleteButton img {
+  width: 20px;
+}
+
+.uploadPrompt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+  border: 1.3px dashed #FFFFFF;
+  border-radius: 8px;
+  /* background: #ffffff29; */
+  background: #ccc;
+  /* background: transparent; */
+  backdrop-filter: blur(12.85527229309082px);
+  position: relative;
+}
+
+.uploadIcon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 8px;
+  color: #FFFFFF33;
+}
+
+.uploadText {
+  margin: 0;
+  /* color: #f0f0f0; */
+  color: #fff;
+  font-size: 14px;
+}
+
+.hiddenInput {
+  display: none;
+}
+
+.errorMessage {
+  color: #dc3545;
+  font-size: 12px;
+  margin-top: 4px;
+}

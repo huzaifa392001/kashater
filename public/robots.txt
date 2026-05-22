@@ -1,0 +1,32 @@
+User-agent: *
+Allow: /
+Allow: /about
+Allow: /faq
+Allow: /view-book
+Allow: /privacy-policy
+Allow: /terms-condition
+Allow: /Delivery-policy
+Allow: /Refund-policy
+
+Disallow: /admin/
+Disallow: /user/mycart
+Disallow: /user/address
+Disallow: /user/ordersuccess
+Disallow: /user/my_orders
+Disallow: /user/view_orders/
+Disallow: /user/profile_page
+Disallow: /user/view_request
+Disallow: /user/draft
+Disallow: /user/personalize_story
+Disallow: /my-cart
+Disallow: /address
+Disallow: /order-placed
+Disallow: /my-orders-new
+Disallow: /track-order-new
+Disallow: /new-ticket-detail
+Disallow: /my-subscription-new
+Disallow: /my-profile-new
+Disallow: /my-popup
+Disallow: /edit-this-story
+
+Sitemap: https://www.kadhaster.com/sitemap.xml
