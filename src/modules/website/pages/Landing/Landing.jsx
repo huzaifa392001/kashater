@@ -828,6 +828,7 @@ after 14 working days, kindly contact us at support@kadhaster.com.`,
     story: `${baseUrl}user/home/our-story-list`,
     testimonial: `${baseUrl}user/home/testimonial-list`,
     banner: `${baseUrl}user/home/banner-template/`,
+    comingSoon: `${baseUrl}user/home/coming-soon-stories`,
   };
   const toggleAccordion = (index) => {
     if (index == accordionIndex) {
@@ -868,6 +869,7 @@ after 14 working days, kindly contact us at support@kadhaster.com.`,
         obj[keys[i]] = item?.data?.data;
       });
       setApiData(obj);
+      setComingSoonList(obj.comingSoon ?? []);
       setSelectedStory(1);
       setSelectedStoryData(obj?.story?.[1])
     } catch (e) {
@@ -879,26 +881,8 @@ after 14 working days, kindly contact us at support@kadhaster.com.`,
   // Handle initial load and browser back/forward navigation
 
 
-  const getComingSoonList = async data => {
-    await sendRequest(
-      {
-        url: "user/home/coming-soon-stories",
-        method: "GET",
-      },
-      response => {
-        setComingSoonList(response?.data)
-      },
-      error => {
-        // Handle error case
-        console.log('err', error);
-      }
-    )
-  }
-
-
   useEffect(() => {
     api();
-    getComingSoonList()
   }, []);
 
   useEffect(() => {
@@ -1990,6 +1974,7 @@ after 14 working days, kindly contact us at support@kadhaster.com.`,
                   <section className={`${classes.coming_soon_thumb}`}>
                     <img
                       draggable={false}
+                      loading="lazy"
                       onContextMenu={(e) => import.meta.env.VITE_IMG_METHOD == 'dev' ? undefined : e.preventDefault()} src={item?.gif_path} alt="" />
                   </section>
                 </section>
