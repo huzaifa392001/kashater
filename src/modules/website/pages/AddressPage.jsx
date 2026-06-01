@@ -10,6 +10,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import useIsMobile from "../../web/hooks/useIsMobile";
 import useApiHttp from "../../web/hooks/ues-http";
+import { Country, State } from "country-state-city"
 import Swal from "sweetalert2"
 import loadRazorpayScript from "../../web/utils/razorpay";
 import { countApi } from "../../web/services/storeSlice/addCart";
@@ -27,8 +28,7 @@ import circle from "../../website/assets/image/circle.png";
 import CustomTextFieldLogin from "../../web/components/UI/TextFiled/TextFiledLogin";
 import CustomeSlecterBlack from "../../admin/components/UI/Dropdown/CustomeSlecterBlack";
 import CustomeSlecterWhite from "../../admin/components/UI/Dropdown/CustomeSlecterWhite";
-// country/state data loaded lazily — see useEffect below
-
+import { countriesList, stateList } from "../../web/utils/Country"
 
 const Alert = React.forwardRef(function Alert(props, ref) {
     return (
@@ -69,8 +69,6 @@ export default function AddressPage() {
 
     const [countries, setCountries] = useState([])
     const [states, setStates] = useState([])
-    const [countriesList, setCountriesList] = useState([])
-    const [stateList, setStateList] = useState([])
     const ismobile = useIsMobile(768)
     const [formDatas, setFormDatas] = useState({
         name: "",
@@ -202,7 +200,6 @@ export default function AddressPage() {
                                     orderDetails: response?.data,
                                 },
                             })
-                            window.location.reload()
                         }
                     )
                 }
@@ -279,7 +276,6 @@ export default function AddressPage() {
                                         },
                                     })
                                     localStorage.removeItem("Gift")
-                                    window.location.reload()
                                 }
                             )
                         },
@@ -826,11 +822,12 @@ export default function AddressPage() {
     }
 
     useEffect(() => {
-        import("../../web/utils/Country").then(({ countriesList: cl, stateList: sl }) => {
-            setCountriesList(cl)
-            setStateList(sl)
-            setCountries(cl.filter(c => c.sortname === "IN"))
-        })
+        // Load countries on mount
+        // const indiaCountry = Country.getAllCountries().find(c => c.isoCode === "IN")
+        // setCountries(indiaCountry ? [indiaCountry] : [])
+        // setCountries(Country.getAllCountries())
+        const indiaCountry = countriesList.filter(c => c.sortname === "IN")
+        setCountries(indiaCountry)
     }, [])
 
     // useEffect(() => {
@@ -1130,7 +1127,23 @@ export default function AddressPage() {
                                             borders={true}
                                             required
                                         /> */}
-                                        <CustomeSlecterWhite
+
+                                        {/* <CustomeSlecter
+                                            data={states.map(a => ({
+                                                label: a.name,
+                                                value: a.name,
+                                            }))}
+                                            title="State"
+                                            width={ismobile ? "100%" : "287px"}
+                                            value={formDatas?.state}
+                                            onChange={e => {
+                                                handlerState(e)
+                                                // setAge(e.target.value)
+                                            }}
+                                            borders={true}
+                                            required
+                                        /> */}
+                                        {/* <CustomeSlecterWhite
                                             data={countries.map(a => ({
                                                 label: a.name,
                                                 value: a.id,
@@ -1163,22 +1176,45 @@ export default function AddressPage() {
                                             helperText={fieldErrors.state}
                                             borders={true}
                                             required
-                                        />
-                                        {/* <CustomeSlecter
-                                            data={states.map(a => ({
-                                                label: a.name,
-                                                value: a.name,
-                                            }))}
-                                            title="State"
-                                            width={ismobile ? "100%" : "287px"}
-                                            value={formDatas?.state}
-                                            onChange={e => {
-                                                handlerState(e)
-                                                // setAge(e.target.value)
-                                            }}
-                                            borders={true}
-                                            required
                                         /> */}
+                                        <div className="w-100">
+                                            <select
+                                                id="consent"
+                                                name="consent"
+                                                className="custom-select-native-transparent"
+                                                value={formDatas?.country}
+                                                onChange={e => {
+                                                    handlerCountry(e)
+                                                }}
+                                            >
+                                                <option value="">Country</option>
+                                                {countries?.map((item, ind) => {
+                                                    return (
+                                                        <option value={item?.id} key={ind}>{item?.name}</option>
+                                                    )
+                                                })}
+                                            </select>
+                                            {!!fieldErrors.country && <p className="popup_design-err">{fieldErrors.country}</p>}
+                                        </div>
+                                        <div className="w-100">
+                                            <select
+                                                id="consent"
+                                                name="consent"
+                                                className="custom-select-native-transparent"
+                                                value={formDatas?.state}
+                                                onChange={e => {
+                                                    handlerState(e)
+                                                }}
+                                            >
+                                                <option value="">State</option>
+                                                {states?.map((item, ind) => {
+                                                    return (
+                                                        <option value={item?.id} key={ind}>{item?.name}</option>
+                                                    )
+                                                })}
+                                            </select>
+                                            {!!fieldErrors.state && <p className="popup_design-err">{fieldErrors.state}</p>}
+                                        </div>
                                     </div>
                                     <CustomTextFieldLogin
                                         id="Landmark"

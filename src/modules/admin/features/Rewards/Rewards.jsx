@@ -206,7 +206,7 @@ import React, { useEffect, useState } from "react"
 import classes from "./Rewards.module.css"
 import CustomButton from "../../components/UI/Button/Button"
 import useApiHttp from "../../hooks/ues-http"
-import { toast } from "react-toastify"
+import toast from "react-hot-toast"
 
 const Rewards = () => {
   const [initialData, setInitialData] = useState(null)

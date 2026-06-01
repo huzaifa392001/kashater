@@ -1,26 +1,35 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import { visualizer } from "rollup-plugin-visualizer";
 
-// https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    visualizer({ open: false, filename: "dist/stats.html" }),
+  ],
   server: {
-    host: true, // 🔥 இதை add பண்ணு
-    port: 5173
+    host: true,
+    port: 5173,
   },
   build: {
-    chunkSizeWarningLimit: 1000,
+    sourcemap: false,
     rollupOptions: {
+      treeshake: true,
       output: {
         manualChunks: {
-          'vendor-react':   ['react', 'react-dom'],
-          'vendor-router':  ['react-router-dom'],
-          'vendor-mui':     ['@mui/material'],
-          'vendor-redux':   ['@reduxjs/toolkit', 'react-redux'],
-          'vendor-country': ['country-state-city'],
-          'vendor-forms':   ['react-hook-form'],
+          "vendor-react": ["react", "react-dom", "react-router-dom"],
+          "vendor-redux": ["@reduxjs/toolkit", "react-redux"],
+          "vendor-mui": [
+            "@mui/material",
+            "@mui/icons-material",
+            "@mui/x-date-pickers",
+            "@emotion/react",
+            "@emotion/styled",
+          ],
+          "vendor-quill": ["quill"],
+          "vendor-query": ["@tanstack/react-query"],
         },
       },
     },
   },
-})
+});

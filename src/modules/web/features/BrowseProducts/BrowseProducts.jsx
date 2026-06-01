@@ -527,7 +527,7 @@ function BrowseProducts() {
               <Slider {...whats_new}>
                 {newBookes?.new_books?.map((item, ind) => {
                   return (<div className={`${classes.product_card} ${classes.whats_new_bg}`} key={ind} onClick={() => {
-                    window.location.href = "/user/books";
+                    navigate("/user/books");
                     localStorage.storyId = item?.id;
                     localStorage.name = item?.name;
                   }}>
@@ -554,7 +554,7 @@ function BrowseProducts() {
                 {newBookes?.new_books?.map((item, ind) => {
                   return (
                     <div className="embla__auto__slide2" key={ind} onClick={() => {
-                      window.location.href = "/user/books";
+                      navigate("/user/books");
                       localStorage.storyId = item?.id;
                       localStorage.name = item?.name;
                     }}>
@@ -592,7 +592,7 @@ function BrowseProducts() {
                 <Slider {...feature_slide}>
                   {newBookes?.featured_books?.map((item, ind) => {
                     return (<div className={`${classes.product_card} ${classes.featured_book_bg}`} key={ind} onClick={() => {
-                      window.location.href = "/user/books";
+                      navigate("/user/books");
                       localStorage.storyId = item?.id;
                       localStorage.name = item?.name;
                     }}>
@@ -617,7 +617,7 @@ function BrowseProducts() {
                 {newBookes?.featured_books?.map((item, ind) => {
                   return (
                     <div className="embla__auto__slide2" key={ind} onClick={() => {
-                      window.location.href = "/user/books";
+                      navigate("/user/books");
                       localStorage.storyId = item?.id;
                       localStorage.name = item?.name;
                     }}>

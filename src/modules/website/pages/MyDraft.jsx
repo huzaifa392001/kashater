@@ -236,7 +236,7 @@ export default function MyDraft() {
                               {book?.book?.description?.replace(/<[^>]*>/g, "")}
                             </p>
                             <div className="actions-cart">
-                              <Link reloadDocument to={`/user/personalize_story?story=${encodeURIComponent(book?.book?.name)}&storyId=${book?.book_id}&whatpage=draft&draftId=${book?.id}`}>
+                              <Link to={`/user/personalize_story?story=${encodeURIComponent(book?.book?.name)}&storyId=${book?.book_id}&whatpage=draft&draftId=${book?.id}`}>
                                 <button className="linkBtn"
                                 // onClick={() => {
                                 //   navigate("/user/personalize_story", {

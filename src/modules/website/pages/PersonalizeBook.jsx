@@ -922,7 +922,6 @@ export default function PersonalizeBook() {
             whereFrom: "personalize",
           },
         })
-        window.location.reload()
         handleClosesetOpenAddUser3()
       }
     )
@@ -975,7 +974,6 @@ export default function PersonalizeBook() {
             whereFrom: "personalize",
           },
         })
-        window.location.reload()
         handleClosesetOpenAddUser3()
       }
     } catch (error) {
@@ -1019,7 +1017,6 @@ export default function PersonalizeBook() {
       dispatch(countApi())
       // fetchBookData()
       navigate("/user/draft")
-      window.location.reload()
     } catch (error) {
       console.error("addCartCharacter error:", error)
       toast.error(error || "Failed to update cart")
@@ -1095,16 +1092,10 @@ export default function PersonalizeBook() {
           {/* Breadcrumb */}
           <p className="breadcrumb-section text-dark">
             <span className="p_new" onClick={() => navigate('/user')}>  Library</span> &gt; <span className="p_new" onClick={() => {
-              let storyId_ = whatPage === "draft" ? isdata?.book?.id : storyId
-              let name_ = whatPage === "draft" ? isdata?.book?.name : isdata?.name
-              navigate(`/user/books?storyId=${storyId}&name=${isdata?.name}`)
-              // navigate("/user/books", {
-              //   state: {
-              //     storyId: whatPage === "draft" ? isdata?.book?.id : storyId,
-              //     name: whatPage === "draft" ? isdata?.book?.name : isdata?.name,
-              //   },
-              // })
-            }}> {isdata?.book_name || isdata?.title || isdata?.name || isdata?.book?.name}</span> &gt; <a href=""><span>Personalize This Story</span></a>
+              const storyId_ = whatPage === "draft" ? isdata?.book?.id : storyId
+              const name_ = whatPage === "draft" ? isdata?.book?.name : isdata?.name
+              navigate(`/user/books?storyId=${storyId_}&name=${encodeURIComponent(name_ || "")}`)
+            }}> {isdata?.book_name || isdata?.title || isdata?.name || isdata?.book?.name}</span> &gt; <span>Personalize This Story</span>
           </p>
 
           {/* Page Title */}

@@ -83,7 +83,8 @@ const ForgotPswForm = () => {
     reactPhoneChangeHandler: phoneNumChangeHandler2,
     inputBlurHandler: phoneNumBlurHandler2,
     reset: resetPhoneNum2,
-  } = useInput(validatePhoneNumber)
+    // } = useInput(validatePhoneNumber)
+  } = useInput(validatePhoneNumber2)
 
   const {
     value: name,
@@ -138,6 +139,9 @@ const ForgotPswForm = () => {
   })
 
   // console.log('enteredNum', enteredNum, 'dialCode', dialCode, 'rawPhone', rawPhone?.length);
+
+  // console.log('enteredNum', enteredNum);
+
 
   console.log('sendOtpError', sendOtpError);
 
@@ -222,14 +226,20 @@ const ForgotPswForm = () => {
           },
           data => {
             setBtnDisable(false)
-            dispatch(authActions.setBearerToken(data?.data?.token))
-            dispatch(authActions.login({ ...data?.data?.user }))
-            if (signin_redirect) {
-              window.location.href = signin_redirect
-              localStorage.removeItem("signin_redirect")
+            if (data?.data?.is_new_user) {
+              phoneNumChangeHandler2(enteredNum, { dialCode: dialCode })
+              setStatus("password")
+              toast.error("Looks like you're new here. Please complete your registration details.");
             } else {
-              // navigate(state?.signin_navigate_redirect || "/user")
-              navigate(-1)
+              dispatch(authActions.setBearerToken(data?.data?.token))
+              dispatch(authActions.login({ ...data?.data?.user }))
+              if (signin_redirect) {
+                localStorage.removeItem("signin_redirect")
+                navigate(signin_redirect, { replace: true })
+              } else {
+                // navigate(state?.signin_navigate_redirect || "/user")
+                navigate(-1)
+              }
             }
           }
         )
@@ -239,6 +249,10 @@ const ForgotPswForm = () => {
       }
     }
   }
+
+  console.log('rawPhone2', rawPhone2, "dialCode2", dialCode2);
+
+
   const handlePassword = () => {
     //  disabled={!nameIsValid || !emailIsValid || !enteredNumIsValid2}
     if (!nameIsValid) {
@@ -249,7 +263,17 @@ const ForgotPswForm = () => {
       toast.error('Please enter a valid Email ID')
       return null
     }
-    if (rawPhone2?.length < 8 || rawPhone2?.length > 10) {
+
+    let cleanedPhone = rawPhone2
+
+    if (enteredNum2?.startsWith(`+${dialCode2}`)) {
+      cleanedPhone = enteredNum2?.replace("+", "").replace(dialCode2, "");
+    }
+
+    // console.log('cleanedPhone', cleanedPhone);
+
+
+    if (cleanedPhone?.length < 8 || cleanedPhone?.length > 10) {
       toast.error('Please enter a valid phone number with the correct country code.')
       return null
     }
@@ -259,18 +283,26 @@ const ForgotPswForm = () => {
       setBtnDisable(true)
       sendOtpRequest(
         {
-          url: `user/register/send-otp`,
+          // url: `user/register/send-otp`,
+          url: `user/register/verify-otp`,
           method: "POST",
           body: {
             country_code: dialCode2,
-            mobile_number: rawPhone2,
+            mobile_number: cleanedPhone,
+            otp: otp.join(""),
+            name: name,
+            email: email,
           },
         },
         data => {
+          // setBtnDisable(false)
+          // setStatus("otp")
+          // setType("Signup")
+          // startCounter()
           setBtnDisable(false)
-          setStatus("otp")
-          setType("Signup")
-          startCounter()
+          dispatch(authActions.setBearerToken(data?.data?.token))
+          dispatch(authActions.login({ ...data?.data?.user }))
+          navigate("/user")
         }
       )
     } catch (error) {
@@ -317,7 +349,7 @@ const ForgotPswForm = () => {
             {status === "success" && "Password Changed!"}
           </h3>
 
-          {status === "email" ? (
+          {/* {status === "email" ? (
             <>
               <Typography
                 variant="p"
@@ -372,7 +404,7 @@ const ForgotPswForm = () => {
               {status === "success" &&
                 `Your password has been changed successfully. "Login Now" to access your account.`}
             </Typography>
-          )}
+          )} */}
         </div>
         {status === "email" && (
           <>
@@ -521,14 +553,17 @@ const ForgotPswForm = () => {
                 name: "mobile_number",
                 required: true,
                 placeholder: "Enter your phone number",
+                readOnly: true,
               }}
               autoFormat={false}
               value={enteredNum2}
               onChange={(value, data, e) => {
+                // console.log('va', value, 'data', data, 'e', e?.target?.defaultValue);
                 phoneNumChangeHandler2(value, data, e)
               }}
               phoneHasError={enteredNumHasError2}
               onBlur={phoneNumBlurHandler2}
+              disableDropdown={true}
             />
             <button
               className={`${classes.loginBtn} ${classes.mrg_top_1rem}`}
@@ -539,9 +574,9 @@ const ForgotPswForm = () => {
                 handlePassword()
               }}
             >
-              Get OTP
+              Register Now
             </button>
-            <p className={classes.loginFooter} style={{ marginTop: "12px" }}>
+            {/* <p className={classes.loginFooter} style={{ marginTop: "12px" }}>
               Already have an account?{" "}
               <span
                 className={classes.signup}
@@ -549,7 +584,7 @@ const ForgotPswForm = () => {
               >
                 Sign in
               </span>
-            </p>
+            </p> */}
           </div>
         )}
 

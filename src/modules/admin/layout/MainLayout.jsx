@@ -5,7 +5,6 @@ import classes from "./MainLayout.module.css"
 import { Outlet } from "react-router-dom"
 import { useDispatch } from "react-redux"
 import { fetchList } from "../services/storeSlice/sideBar"
-import "quill/dist/quill.snow.css"
 
 const MainLayout = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true)

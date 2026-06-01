@@ -727,16 +727,16 @@ export const Footer = () => {
                       <Link to="/">Home</Link>
                     </li>
                     <li>
-                      <Link to="/#howitworks">How it Works ?</Link>
+                      <a href="/#howitworks">How it Works ?</a>
                     </li>
                     <li>
-                      <Link to="/#features">Our Features</Link>
+                      <a href="/#features">Our Features</a>
                     </li>
                     <li>
-                      <Link to="/#stories">Our Stories</Link>
+                      <a href="/#stories">Our Stories</a>
                     </li>
                     <li>
-                      <Link to="/#testimonial">Testimonial</Link>
+                      <a href="/#testimonial">Testimonial</a>
                     </li>
                   </ul>
                 </section>

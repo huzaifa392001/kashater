@@ -9,10 +9,9 @@ import MenuItem from "@mui/material/MenuItem";
 // import logouticon from '../../assets/SVG/common/logout.svg'
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import classes from "./profil.module.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 // import { BASE_URL } from "../../utils/baseUrl"
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import toast from "react-hot-toast";
 import Swal from "sweetalert2";
 
 import { useDispatch } from "react-redux";
@@ -93,9 +92,7 @@ export default function CustomizedMenus() {
   const logoutUser = () => {
     const VerifyEmailData = (data) => {
       dispatch(authActions.logout());
-      // navigate("/");
-      console.log("logging auto");
-      window.location.href = "/";
+      navigate("/");
     };
     LogOutRequest(
       {
@@ -185,7 +182,7 @@ export default function CustomizedMenus() {
           open={open}
           onClose={handleClose}
         >
-          <a href="/user/profile_page" style={{ color: 'rgb(55, 65, 81)' }}>
+          <Link to="/user/profile_page" style={{ color: 'rgb(55, 65, 81)' }}>
             <MenuItem
               disableRipple
               className="profile_list"
@@ -197,14 +194,13 @@ export default function CustomizedMenus() {
               {/* <img src={logouticon} alt="Logout" className={classes.menuicon} /> */}
               My Profile
             </MenuItem>
-          </a>
+          </Link>
           <MenuItem disableRipple className="profile_list" onClick={() => handleLog()}>
             {/* <img src={logouticon} alt="Logout" className={classes.menuicon} /> */}
             Logout
           </MenuItem>
         </StyledMenu>
       </div>
-      <ToastContainer />
 
       <Modal show={opens}
         backdrop="static" // When backdrop is set to static, modal will not close when clicking outside it

@@ -19,7 +19,7 @@ import PhoneNumInput from "../../components/UI/PhoneNumInput/PhoneNumInput"
 import { authActions } from "../../services/storeSlice/authSlice"
 import { useSelector } from "react-redux"
 import { useDispatch } from "react-redux"
-import { toast } from "react-toastify"
+import toast from "react-hot-toast"
 import useIsMobile from "../../hooks/useIsMobile"
 import { Country, State } from "country-state-city"
 

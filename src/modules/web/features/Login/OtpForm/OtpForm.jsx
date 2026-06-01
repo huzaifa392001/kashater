@@ -11,7 +11,7 @@ import useApiHttp from "../../../hooks/ues-http"
 import { useSelector, useDispatch } from "react-redux"
 import { authActions } from "../../../services/storeSlice/authSlice"
 import { isAuthenticated } from "../../../services/isAuthenticated"
-import { toast, ToastContainer } from "react-toastify"
+import toast from "react-hot-toast"
 import secureLocalStorage from "react-secure-storage"
 
 const OtpForm = () => {
@@ -173,7 +173,6 @@ const OtpForm = () => {
           Verify OTP
         </CustomButton>
       </form>
-      <ToastContainer />
     </div>
   )
 }

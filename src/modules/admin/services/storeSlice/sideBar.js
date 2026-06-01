@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from 'axios';
 
-import { toast } from "react-toastify";
+import toast from "react-hot-toast";
 export const fetchList = createAsyncThunk('data/fetchList', async () => {
     const AdminbearerToken = JSON.parse(localStorage.getItem("adminUserData"))?.authToken;
     const baseUrl = (import.meta.env.VITE_API_BASE_URL || "http://localhost:3001").replace(/\/$/, "");

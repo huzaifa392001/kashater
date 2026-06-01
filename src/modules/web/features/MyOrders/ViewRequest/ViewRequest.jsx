@@ -9,7 +9,7 @@ import OrderTrackingStepper from "../../../components/OrderTrackingStepper/Order
 import { useLocation, useNavigate } from "react-router-dom"
 import useApiHttp from "../../../hooks/ues-http"
 import axios from "axios"
-import { toast } from "react-toastify"
+import toast from "react-hot-toast"
 import { useDispatch } from "react-redux"
 import { addCart, countApi } from "../../../services/storeSlice/addCart"
 import CustomRadio from "../../../components/UI/CustomRadio/CustomRadio"
@@ -23,7 +23,7 @@ import CustomCarouselStory from "../../../components/Page/PersonalizeStory/Carou
 import CustomButton from "../../../components/UI/Button/Button"
 import styled from "styled-components"
 import testImage from "../../../assets/image/png/feedback_box.png"
-import { get } from "lodash"
+import get from "lodash/get"
 import FileViewerLightbox from "../../../components/UI/PdfView/Lightbox/LightboxImgPdf"
 
 const Alert = React.forwardRef(function Alert(props, ref) {

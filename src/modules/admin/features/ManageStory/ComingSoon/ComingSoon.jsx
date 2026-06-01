@@ -23,6 +23,7 @@ import useApiHttp from "../../../hooks/ues-http"
 import Swal from "sweetalert2"
 import UploadThumbnail from "../../../components/UI/UploadThumbnail/UploadThumbnail"
 import toast from "react-hot-toast"
+import FileUploadComponentGif from "../../../components/UI/FileUploadComponent/FileUploadComponentGif"
 
 const ComingSoon = () => {
   //   const { isLoading, success, error, sendRequest } = useApiHttp()
@@ -52,6 +53,8 @@ const ComingSoon = () => {
   const [errors2, setErrors2] = useState("")
   const [image, setImage] = useState("")
   const [image2, setImage2] = useState("")
+  const [gifFiles, setGifFiles] = useState(null)
+  const [gifFiles2, setGifFiles2] = useState(null)
   const [selectedItems, setSelectedItems] = useState([])
   // const [selectedItemsError, setSelectedItemsError] = useState(true);
   const [newRole, setNewRole] = useState({
@@ -232,8 +235,19 @@ const ComingSoon = () => {
       nameChangeHandler({ target: { value: row?.title } })
       setImage(row?.image1_path)
       setImage2(row?.image2_path)
+      setGifFiles(row?.gif_path)
+      let preview_gif = row?.gif_path
+        ? {
+          url: row?.gif_path,
+          name: "Existing cover",
+          type: "image/gif",
+        }
+        : null
+      setGifFiles2(preview_gif)
       setEditCatID(row?.id)
     } else {
+      setGifFiles2(null)
+      setGifFiles(null)
       resetNameInput()
     }
     setOpenAdduser(true)
@@ -244,6 +258,8 @@ const ComingSoon = () => {
     setEditCatID("")
     setImage("")
     setImage2("")
+    setGifFiles(null)
+    setGifFiles2(null)
   }
 
   const handleDelete = row => {
@@ -297,10 +313,24 @@ const ComingSoon = () => {
         return
       }
 
+      if (!image2?.file?.name) {
+        setErrors2('Image 2 is required')
+        toast.error('Image 2 is required')
+        return
+      }
+
+      if (!gifFiles?.file) {
+        setErrors2('Image 2 is required')
+        toast.error('GIF Image 2 required')
+        return
+      }
+
+
       let formdata = new FormData()
       formdata.append('title', "")
       formdata.append('image1', image?.file)
       formdata.append('image2', image2?.file)
+      formdata.append("gif", gifFiles?.file)
 
       addCategory(
         {
@@ -327,6 +357,11 @@ const ComingSoon = () => {
       if (image2?.file) {
         formdata.append('image2', image2?.file)
       }
+
+      if (gifFiles?.file) {
+        formdata.append("gif", gifFiles?.file)
+      }
+
       formdata.append('id', editCatID)
       updateCategory(
         {
@@ -449,7 +484,7 @@ const ComingSoon = () => {
           open={openAdduser}
           handleClose={handleClosesetOpenAddUser}
           showCloseIcon={false}
-          customWidth={"600px"}
+          customWidth={"800px"}
           overflowY={"unset"}
           children={
             <>
@@ -477,7 +512,7 @@ const ComingSoon = () => {
                     required
                   />
                 </div> */}
-                <div className="d-flex justify-content-between">
+                <div className="d-flex gap-3">
                   <div className={classes.fileds} style={{ width: '200px' }}>
                     <p className="text-center text-dark">Image 1</p>
                     <UploadThumbnail
@@ -508,6 +543,21 @@ const ComingSoon = () => {
                       allowedTypes={["image/jpeg", "image/png"]}
                       maxSizeMB={5}
                       initialImage={image2?.name ? null : image2}
+                    />
+                  </div>
+                  <div className={classes.fileds} style={{ width: '200px' }}>
+                    <p className="text-center text-dark">GIF Image</p>
+                    <FileUploadComponentGif
+                      acceptedTypes={["image/gif"]}
+                      maxSize={10}
+                      onFilesChange={files => setGifFiles(files[0])}
+                      className="width_min"
+                      dropzoneText="Upload GIF Image"
+                      box_controlerl={"box_sizeing"}
+                      multiple={false} // Ensure single file upload
+                      existingFile={gifFiles2}
+                      types="GIF"
+                      method={'gif'}
                     />
                   </div>
                 </div>

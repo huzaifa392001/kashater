@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { NavLink, Link, useLocation, useNavigate } from "react-router-dom";
+import { NavLink, Link, useLocation, useNavigate } from "react-router-dom"; // Add useLocation
 import classes from "./Header.module.css";
 import logo from "../../../website/assets/image/png/logo3.png";
 // import cart from "../../../web/assets/image/svg/cart.svg";
@@ -83,7 +83,9 @@ function Header() {
           {/* Left: Logo */}
           <Navbar.Brand as={Link} to="/">
             <img className="main-logo" src={logo_mobile} alt="KADHASTER" />
+            {/* <img className="res-logo" src={logo_fav} alt="KADHASTER" /> */}
             <img className="res-logo" src={logo_mobile} alt="KADHASTER" />
+
           </Navbar.Brand>
 
           {/* Center: Nav Links */}
@@ -139,6 +141,9 @@ function Header() {
               <Link to="/user/try-now" className={`nav-link ${pathname == "/user/try-now" ? 'active' : ""}`}>
                 Try Now
               </Link>
+              {/* <a to="/blogs" className={`nav-link ${pathname == "/blog" ? 'active' : ""}`}>
+                Blogs
+              </a> */}
 
               {isAuthenticated() ?
                 null
@@ -160,13 +165,17 @@ function Header() {
                 >
                   {/* empty profile */}
 
-                  <Link to="/user/draft" className="cart-ic  mb-1">
+                  <Link
+                    to="/user/draft" className="cart-ic  mb-1">
                     <BookmarkIcon className="placholder-img" style={{ fill: '#4e1759' }} />
+
                     <span className="text-primary cart-value">
                       {" "}{data?.draft_count}
+                      {/* {5} */}
                     </span>
                   </Link>
-                  <Link to="/user/mycart" className="cart-ic">
+                  <Link
+                    to="/user/mycart" className="cart-ic">
                     <img
                       className="placholder-img"
                       src={cart}
@@ -174,6 +183,7 @@ function Header() {
                     />
                     <span className="text-primary cart-value">
                       {" "}{data?.cart_count}
+                      {/* {5} */}
                     </span>
                   </Link>
 
@@ -186,7 +196,7 @@ function Header() {
                   {/* <a href="/user/coming-soon" >Login / Signup</a> */}
                   {/* LIVE END */}
                   {/* DEV START */}
-                  <Link to="/user/login">Login / Signup</Link>
+                  <Link to="/user/login" >Login / Signup</Link>
                   {/* DEV END */}
                 </section>
               }

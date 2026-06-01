@@ -137,6 +137,7 @@ function OtpInputs(props) {
             onKeyDown={e => handleKeyDown(e, i)}
             onChange={e => handleChange(e, i)}
             onPaste={handlePaste}   // ✅ add this
+            autoComplete="one-time-code"
             {...props?.inputProps}
             sx={{
               ...otpInputStyle,

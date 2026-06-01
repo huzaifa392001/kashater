@@ -14,7 +14,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import useApiHttp from "../../web/hooks/ues-http";
 import { countApi } from "../../web/services/storeSlice/addCart";
-import { debounce } from "lodash";
+import debounce from "lodash/debounce";
 import CustomSwal from "../../web/utils/customSwal";
 import styles from "../../web/features/MyOrders/MyOrdersSet/MyOrdersSet.module.css"
 import axios from "axios";
@@ -147,7 +147,7 @@ const MyOrdersNew = () => {
 
     const refCurrent = containerRef.current
     if (refCurrent) {
-      refCurrent.addEventListener("scroll", handleScroll, { passive: true })
+      refCurrent.addEventListener("scroll", handleScroll)
     }
 
     return () => {
@@ -380,7 +380,6 @@ const MyOrdersNew = () => {
     //   },
     // })
     navigate(`/user/view_orders/${item?.id}`)
-    window.location.reload()
   }
 
   return (
@@ -405,9 +404,7 @@ const MyOrdersNew = () => {
           <p className="breadcrumb-section text-dark">
             <Link to="/user/profile_page">
               <span className="p_new">My Profile</span> </Link> &gt;{" "}
-            <a href="">
-              <span>My Orders</span>
-            </a>
+            <span>My Orders</span>
           </p>
 
           {/* my order page */}

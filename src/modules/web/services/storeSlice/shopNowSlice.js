@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from 'axios';
 import Fuse from "fuse.js";
 import secureLocalStorage from "react-secure-storage";
-import { toast } from "react-toastify";
+import toast from "react-hot-toast";
 export const fetchList = createAsyncThunk('data/fetchList', async () => {
     const AdminbearerToken = secureLocalStorage.getItem('dealerBearerToken');
 

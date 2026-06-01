@@ -197,10 +197,6 @@ const BookCard = forwardRef(function BookCard(
     navigate("/user/personalize_story", {
       state: { storyId: id, isdata: data },
     })
-    window.location.reload()
-    // setTimeout(() => {
-    //   window.location.reload()
-    // }, 100)
   }
 
   const viewBookNav = (id, name) => {
@@ -210,9 +206,6 @@ const BookCard = forwardRef(function BookCard(
         name: name,
       },
     })
-    window.location.reload()
-    // setTimeout(() => {
-    // }, 100)
   }
 
   const ageFormeter = (age_) => {
@@ -255,25 +248,19 @@ const BookCard = forwardRef(function BookCard(
         <h6>"{category}"</h6>
 
         <div className={classes.buttonGroup}>
-          <Link reloadDocument to={`/user/personalize_story?story=${encodeURIComponent(data?.name)}`}>
-            <button
-              className={classes.generateBtn}
-              onClick={e => {
-                e.stopPropagation()
-                // personalizeNav(id, data)
-              }}
-            >
+          <Link
+            to={`/user/personalize_story?story=${encodeURIComponent(data?.name)}`}
+            onClick={e => e.stopPropagation()}
+          >
+            <button className={classes.generateBtn}>
               <img src={customize} alt="customize" /> Personalize
             </button>
           </Link>
-          <Link to={`/user/books?storyId=${id}&name=${encodeURIComponent(name)}`}>
-            <button
-              className={classes.viewBtn}
-              onClick={e => {
-                // viewBookNav(id, name)
-                e.stopPropagation()
-              }}
-            >
+          <Link
+            to={`/user/books?storyId=${id}&name=${encodeURIComponent(name)}`}
+            onClick={e => e.stopPropagation()}
+          >
+            <button className={classes.viewBtn}>
               View Book
             </button>
           </Link>

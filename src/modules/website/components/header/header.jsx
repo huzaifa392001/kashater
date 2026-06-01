@@ -62,7 +62,7 @@ export const Header = (props) => {
       setScrolled(isScrolled);
     };
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("scroll", handleScroll);
 
     // Cleanup event listener on component unmount
     return () => window.removeEventListener("scroll", handleScroll);

@@ -34,7 +34,7 @@ import CustomRadio from "../../web/components/UI/CustomRadio/CustomRadio";
 import hang from "../../web/assets/image/svg/hang.svg";
 import { Modal } from "react-bootstrap";
 import CustomSwal from "../../web/utils/customSwal";
-import { toast } from "react-toastify";
+import toast from "react-hot-toast";
 import styles2 from "../../web/features/MyOrders/ViewOrder/ViewOrder.module.css"
 
 import classes from "../../web/components/OrderTrackingStepper/OrderTrackingStepper.module.css"
@@ -809,7 +809,7 @@ const TrackOrderNew = () => {
                                 it...(need to change in api)
                               </p> */}
                               <div className="df f-w as gap-2 mt-2">
-                                <Link reloadDocument to={`/user/personalize_story?story=${encodeURIComponent(item?.book_name)}&storyId=${item?.book_id}&whatpage=view_page&orderId=${item?.id}`}>
+                                <Link to={`/user/personalize_story?story=${encodeURIComponent(item?.book_name)}&storyId=${item?.book_id}&whatpage=view_page&orderId=${item?.id}`}>
                                   <button
                                     className={styles.outlineButton}
                                   // onClick={() => {

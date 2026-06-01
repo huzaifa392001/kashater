@@ -19,7 +19,7 @@ import CustomTextField from "../../components/UI/TextFiled/TextFiled"
 import CustomeSlecterAdmin from "../../components/UI/Dropdown/CustomeSlecterAdmin"
 import FromToDatePicker from "../../components/UI/DatePicker/FromToDatePicker"
 import dayjs from "dayjs"
-import { toast } from "react-toastify"
+import toast from "react-hot-toast"
 import { IconButton } from "@mui/material"
 import edit from "../../assets/image/svg/edit.svg"
 import OverlayLoding from "../../components/UI/Loding/OverlayLoding"
@@ -333,9 +333,6 @@ export default function OrderDetails() {
           },
           res => {
             Swal.fire("Success!", res.message, "success")
-            setTimeout(() => {
-              window.location.reload()
-            }, 1000)
             handleOrorderManagementList()
           }
         )

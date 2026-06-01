@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Header } from "../../../website/components/header/header";
 import { Footer } from "../../../website/components/footer/footer";
 import "./book.css";
@@ -20,6 +21,7 @@ import avatar5 from "../../assets/image/png/1.png";
 
 
 const Book = () => {
+  const navigate = useNavigate();
   const [selectedImg, setSelectedImg] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [autoScroll, setAutoScroll] = useState(true);
@@ -278,7 +280,7 @@ const Book = () => {
             <section
               className="button-section"
               onClick={() => {
-                window.location.href = "/user/try-now";
+                navigate("/user/try-now");
               }}
             >
               <button className="button-1">
@@ -346,7 +348,7 @@ const Book = () => {
           <section
             className="button-section1"
             onClick={() => {
-              window.location.href = "/user/try-now";
+              navigate("/user/try-now");
             }}
           >
             <button className="button-2">

@@ -113,7 +113,7 @@ import EmblaCarouselAuto from "../../components/carousel-autoplay/embla-auto";
 import CircularProgress from "@mui/material/CircularProgress";
 import BoostrapDialog from "../../../web/components/UI/Dialog/BoostrapDialog";
 import { Footer } from "../../components/footer/footer";
-import { NavLink, useNavigate, Link } from "react-router-dom";
+import { NavLink, Link, useNavigate } from "react-router-dom";
 import SectionPrivacy from "./SectionPrivacy/SectionPrivacy";
 import ComingSoon from "./ComingSoon/ComingSoon";
 import useApiHttp from "../../../web/hooks/ues-http";
@@ -828,7 +828,6 @@ after 14 working days, kindly contact us at support@kadhaster.com.`,
     story: `${baseUrl}user/home/our-story-list`,
     testimonial: `${baseUrl}user/home/testimonial-list`,
     banner: `${baseUrl}user/home/banner-template/`,
-    comingSoon: `${baseUrl}user/home/coming-soon-stories`,
   };
   const toggleAccordion = (index) => {
     if (index == accordionIndex) {
@@ -869,7 +868,6 @@ after 14 working days, kindly contact us at support@kadhaster.com.`,
         obj[keys[i]] = item?.data?.data;
       });
       setApiData(obj);
-      setComingSoonList(obj.comingSoon ?? []);
       setSelectedStory(1);
       setSelectedStoryData(obj?.story?.[1])
     } catch (e) {
@@ -881,8 +879,26 @@ after 14 working days, kindly contact us at support@kadhaster.com.`,
   // Handle initial load and browser back/forward navigation
 
 
+  const getComingSoonList = async data => {
+    await sendRequest(
+      {
+        url: "user/home/coming-soon-stories",
+        method: "GET",
+      },
+      response => {
+        setComingSoonList(response?.data)
+      },
+      error => {
+        // Handle error case
+        console.log('err', error);
+      }
+    )
+  }
+
+
   useEffect(() => {
     api();
+    getComingSoonList()
   }, []);
 
   useEffect(() => {
@@ -975,7 +991,7 @@ after 14 working days, kindly contact us at support@kadhaster.com.`,
       }
     };
 
-    el.addEventListener("scroll", handleScroll, { passive: true });
+    el.addEventListener("scroll", handleScroll);
     return () => el.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -1313,9 +1329,7 @@ after 14 working days, kindly contact us at support@kadhaster.com.`,
               {item.title}
 
               <p>{item.sub_title}</p>
-              <section className={`${classes.button__primary__container}`} onClick={()=> {
-                navigate("/user/try-now");
-                }}
+              <section className={`${classes.button__primary__container}`} onClick={() => navigate("/user/try-now")}
                 >
                 <button className={`${classes.button__primary} ${classes.button__primary__l}`}>
                   <img src={magic_icon} alt="" />
@@ -1359,10 +1373,9 @@ after 14 working days, kindly contact us at support@kadhaster.com.`,
                 setCarouselIndex={setCarouselIndex}
                 options={{ loop: true, watchDrag: tabWidth }}
               >
-                {data.hero_data.map((item, i) => {
+                {data.hero_data.map((item) => {
                   return (
                     <section
-                      key={i}
                       id="hero"
                       className={`${classes.slider__row} embla__auto__slide`}
                       style={{}}
@@ -1379,9 +1392,7 @@ after 14 working days, kindly contact us at support@kadhaster.com.`,
               </EmblaCarouselAuto>
               <section
                 className={`${classes.button__primary__container}`}
-                onClick={() => {
-                  navigate("/user/try-now");
-                }}
+                onClick={() => navigate("/user/try-now")}
               >
                 <button
                   className={`${classes.button__primary} ${classes.button__primary__l}`}
@@ -1743,9 +1754,9 @@ after 14 working days, kindly contact us at support@kadhaster.com.`,
 
                             <button
                               onClick={() => {
-                                navigate("/user/books");
                                 localStorage.storyId = item?.id;
                                 localStorage.name = item?.name;
+                                navigate("/user/books");
                               }}
                             >
                               View Book
@@ -1761,10 +1772,10 @@ after 14 working days, kindly contact us at support@kadhaster.com.`,
 
               <div className={`${classes.dive_btn}`}>
                 <button onClick={() => {
-                  navigate("/user/coming-soon");
                   localStorage.storyId = selectedStoryData?.id
                   localStorage.isdata = selectedStoryData
                   localStorage.book_data = JSON.stringify(selectedStoryData);
+                  navigate("/user/coming-soon");
                 }}
                   className={`${classes.button__primary} ${classes.button__primary__s}`}
                 >
@@ -1818,9 +1829,7 @@ after 14 working days, kindly contact us at support@kadhaster.com.`,
                   })}
                 </ul>
                 <section className={`${classes.button__primary__container}`}>
-                  <button className={`${classes.button__primary} ${classes.button__primary__l}`} onClick={()=> {
-                    navigate("/user/my_subscriptions");
-                    }}
+                  <button className={`${classes.button__primary} ${classes.button__primary__l}`} onClick={() => navigate("/user/my_subscriptions")}
                     >
                     <p>Choose Plan</p>
                     <img src={right_arrow_icon} alt="right arrow" />
@@ -1974,7 +1983,6 @@ after 14 working days, kindly contact us at support@kadhaster.com.`,
                   <section className={`${classes.coming_soon_thumb}`}>
                     <img
                       draggable={false}
-                      loading="lazy"
                       onContextMenu={(e) => import.meta.env.VITE_IMG_METHOD == 'dev' ? undefined : e.preventDefault()} src={item?.gif_path} alt="" />
                   </section>
                 </section>
@@ -2076,9 +2084,7 @@ after 14 working days, kindly contact us at support@kadhaster.com.`,
                 </h2>
                 <section
                   className={`${classes.button__primary__container}`}
-                  onClick={() => {
-                    navigate("/user");
-                  }}
+                  onClick={() => navigate("/user")}
                 >
                   <button
                     className={`${classes.button__primary} ${classes.button__primary__l}`}

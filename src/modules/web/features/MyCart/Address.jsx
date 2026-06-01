@@ -16,7 +16,7 @@ import { useDispatch } from "react-redux"
 import { countApi } from "../../services/storeSlice/addCart"
 import Swal from "sweetalert2"
 import CustomRadio from "../../components/UI/CustomRadio/CustomRadio"
-import { toast } from "react-toastify"
+import toast from "react-hot-toast"
 import useIsMobile from "../../hooks/useIsMobile"
 import { Country, State } from "country-state-city"
 

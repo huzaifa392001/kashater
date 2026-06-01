@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react"
+import { useNavigate } from "react-router-dom"
 import Marquee from "react-fast-marquee"
 import CustomButton from "../../components/UI/Button/Button"
 
@@ -37,7 +38,7 @@ import CustomeSlecterBlack from "../../../admin/components/UI/Dropdown/CustomeSl
 import useIsMobile from "../../hooks/useIsMobile"
 import CustomeSlecter from "../../../admin/components/UI/Dropdown/CustomeSlecter"
 import CustomeSlecterWhite from "../../../admin/components/UI/Dropdown/CustomeSlecterWhite"
-import { toast } from "react-toastify"
+import toast from "react-hot-toast"
 import ImageCropper from "../../../website/components/ImageCropper/ImageCropper"
 
 export const TryNow = () => {
@@ -110,7 +111,7 @@ export const TryNow = () => {
       text: (
         <p>
           <strong>Mrs. Mamta</strong> has added her photo and finalised her
-          family’s magical book!
+          family's magical book!
         </p>
       ),
     },
@@ -135,7 +136,7 @@ export const TryNow = () => {
       img: img_11,
       text: (
         <p>
-          <strong>Mr. Kulkarni</strong> has customised the storybook and can’t
+          <strong>Mr. Kulkarni</strong> has customised the storybook and can't
           wait to share it with his family!
         </p>
       ),
@@ -169,6 +170,7 @@ export const TryNow = () => {
   const { sendRequest, isLoading, error: apiError } = useApiHttp()
   const selectedCharacterData = data.find(item => item.id === selectedIndex)
   const isAuth = isAuthenticated()
+  const navigate = useNavigate()
 
   const [openCropperPopup, setOpenCropperPopup] = useState(false)
   const imageRef = useRef()
@@ -233,8 +235,8 @@ export const TryNow = () => {
         setOpen(true)
       } else {
         localStorage.setItem("selected_field", selectedIndex)
-        window.location.href = "/user/login"
         localStorage.setItem("signin_redirect", window.location.pathname)
+        navigate("/user/login")
       }
     } else {
       setError(true)
@@ -549,8 +551,8 @@ export const TryNow = () => {
                             personalized storybook for my child. I acknowledge that the photographs will be safely stored under my user
                             profile, where I can edit them any time, and the same may only be used for orders that I may place in the future.
                             I understand that Kadhaster follows stringent Indian and International data security standards to ensure my
-                            child’s information is handled with the utmost care and confidentiality, complying with ISO/IEC 27000 Series,
-                            Digital Personal Data Protection (DPDA Rules 2025), COPPA (Children’s Online Privacy Protection Act), and
+                            child's information is handled with the utmost care and confidentiality, complying with ISO/IEC 27000 Series,
+                            Digital Personal Data Protection (DPDA Rules 2025), COPPA (Children's Online Privacy Protection Act), and
                             GDPR (General Data Protection Regulation).
                             I acknowledge and understand that the data will be retained for a period of three (3) years. I acknowledge and
                             understand I can withdraw this consent anytime by contacting  <a href="mailto:support@kadhaster.com" target={'_blank'} className="text-primary">@support@kadhaster.com</a> </p>
@@ -566,16 +568,16 @@ export const TryNow = () => {
                           <span className="checkmark"></span>
                         </label>
                         <label>
-                          <p>I hereby confirm that I am over 18 years of age and that I am duly authorised by the child’s Parent /Lawful
+                          <p>I hereby confirm that I am over 18 years of age and that I am duly authorised by the child's Parent /Lawful
                             Guardian and have obtained permission from the child's parent/guardian . I consent to the secure use of the
                             photographs submitted solely for the previewing or the trying out of a personalized storybook for the child. I
-                            acknowledge and agree that the child’s Parent /Lawful Guardian remains the primary consenting authority for
-                            the processing of the child’s personal data.
+                            acknowledge and agree that the child's Parent /Lawful Guardian remains the primary consenting authority for
+                            the processing of the child's personal data.
                             I acknowledge that the photographs will be safely stored under my user profile, where I can edit them any time,
                             and the same may only be used for orders that I may place in the future.
                             I understand that Kadhaster follows stringent Indian and International data security standards to ensure my
-                            child’s information is handled with the utmost care and confidentiality, complying with ISO/IEC 27000 Series,
-                            Digital Personal Data Protection (DPDA Rules 2025), COPPA (Children’s Online Privacy Protection Act), and
+                            child's information is handled with the utmost care and confidentiality, complying with ISO/IEC 27000 Series,
+                            Digital Personal Data Protection (DPDA Rules 2025), COPPA (Children's Online Privacy Protection Act), and
                             GDPR (General Data Protection Regulation).
                             I acknowledge and understand that the data will be retained for a period of three (3) years. I acknowledge and
                             understand that I can withdraw my consent at any time and that the parent or lawful guardian may also withdraw
@@ -715,7 +717,7 @@ export const TryNow = () => {
             <h1 className="title-40px">Try Now</h1>
             <h3>
               {isSwapped
-                ? `Here’s a sneak peek at how your photo will look in your personalised story!`
+                ? `Here's a sneak peek at how your photo will look in your personalised story!`
                 : `Experience the magic of your personalized storybook instantly – for
           free!`}
             </h3>
@@ -731,15 +733,13 @@ export const TryNow = () => {
                   draggable={false}
                   onContextMenu={(e) => import.meta.env.VITE_IMG_METHOD == 'dev' ? undefined : e.preventDefault()} />
                 <p>
-                  Like what you see? Just click ‘Personalise my book’ to explore our
+                  Like what you see? Just click 'Personalise my book' to explore our
                   library, upload your favourite photos, and make story time truly
                   unforgettable!
                 </p>
                 <section>
                   <CustomButton
-                    onClick={() => {
-                      window.location.href = "/user"
-                    }}
+                    onClick={() => navigate("/user")}
                     variant="contained"
                     customColor="#fff"
                     customBgColor="#8131bf"

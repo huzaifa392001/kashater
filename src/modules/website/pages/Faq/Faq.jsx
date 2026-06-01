@@ -293,7 +293,7 @@ after 14 working days, kindly contact us at support@kadhaster.com.,
       }
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   return (

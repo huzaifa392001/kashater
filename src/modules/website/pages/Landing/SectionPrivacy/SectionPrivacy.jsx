@@ -68,7 +68,7 @@ const SectionPrivacy = () => {
           >
             {data.faq.map((item, i) => {
               return (
-                <li key={i}>
+                <li>
                   <section onClick={() => toggleAccordion(i)}>
                     <h3>{item.question}</h3>
 

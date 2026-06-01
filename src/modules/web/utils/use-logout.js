@@ -19,7 +19,6 @@ const useLogout = () => {
       dispatch(snackbarActions.setSnackbar(data));
       dispatch(authActions.logout());
       navigate("/");
-      window.location.reload();
     },
     onError: (data) => dispatch(snackbarActions.setSnackbar(data)),
   });

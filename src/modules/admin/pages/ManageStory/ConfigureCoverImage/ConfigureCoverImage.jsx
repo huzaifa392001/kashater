@@ -16,7 +16,7 @@ import FileViewerLightbox1 from "../../../components/UI/Lightbox/LightboxImgPdf"
 import toast, { Toaster } from "react-hot-toast"
 import { Box, CircularProgress, Switch } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import { set } from "lodash"
+import set from "lodash/set"
 import CustomButton from "../../../components/UI/Button/Button"
 import FileUploadComponent from "../../../components/UI/FileUploadComponent/FileUploadComponent"
 import TrashIcon from "../../../assets/image/svg/trash_icon.svg"

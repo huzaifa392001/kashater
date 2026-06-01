@@ -11,8 +11,7 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown"
 import classes from "./profil.module.css"
 import { useNavigate } from "react-router-dom"
 // import { BASE_URL } from "../../utils/baseUrl"
-import { ToastContainer, toast } from "react-toastify"
-import "react-toastify/dist/ReactToastify.css"
+import toast from "react-hot-toast"
 import Swal from "sweetalert2"
 
 import { useDispatch } from "react-redux"
@@ -161,8 +160,6 @@ export default function CustomizedMenus() {
           </MenuItem>
         </StyledMenu>
       </div>
-      <ToastContainer />
-
       <Modal show={opens}
         backdrop="static" // When backdrop is set to static, modal will not close when clicking outside it
         keyboard={false}

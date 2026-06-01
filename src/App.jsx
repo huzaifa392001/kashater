@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react"
-import Admin from "./routes/admin"
-import WebRoutes from "./routes/WebRoutes"
+import { lazy, Suspense, useEffect, useState } from "react"
+const Admin = lazy(() => import("./routes/admin"))
+import WebSite from "./routes/WebSite"
 import "./modules/website/assets/css/style.css"
 import "./modules/website/assets/css/custom.css"
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -34,12 +34,18 @@ function App() {
     loadCss()
   }, [isAdminPath])
 
-  if (!cssLoaded) return null
+  if (!cssLoaded) return null // Avoid rendering unstyled content
 
   return (
     <>
       <Toaster position="top-right" reverseOrder={false} />
-      {isAdminPath ? <Admin /> : <WebRoutes />}
+      {isAdminPath ? (
+        <Suspense fallback={null}>
+          <Admin />
+        </Suspense>
+      ) : (
+        <WebSite />
+      )}
     </>
   )
 }

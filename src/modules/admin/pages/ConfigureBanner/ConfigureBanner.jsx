@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from "react"
 import classes from "../ConfigureBanner/ConfigureBanner.module.css"
-import { toast } from "react-toastify"
+import toast from "react-hot-toast"
 import CustomButton from "../../components/UI/Button/Button"
 import useApiHttp from "../../hooks/ues-http"
 import MinHeightTextarea from "../../components/UI/TextArea/Textarea"

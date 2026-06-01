@@ -1,51 +1,61 @@
-import React from "react"
+import React, { Suspense } from "react"
 import { RouterProvider, createBrowserRouter } from "react-router-dom"
+import { Toaster } from "react-hot-toast"
+
+// Synchronous: structural/tiny components that must be available immediately
 import MainLayout from "../modules/admin/layout/MainLayout"
-import LoginForm from "../modules/admin/pages/Login/Login"
-import ForgotPassword from "../modules/admin/pages/Login/ForgotPassword"
-import Dashboard from "../modules/admin/pages/Dashboard/Dashboard"
-import AuthGuard from "../modules/admin/services/AuthGuard"
-import StoryListPage from "../modules/admin/pages/ManageStory/StoryListPage"
-import ConfigureCategoryPage from "../modules/admin/pages/ManageStory/ConfigureCategoryPage"
-import ConfigureLibraryPage from "../modules/admin/pages/ManageStory/ConfigureLibraryPage"
-import RoleListPage from "../modules/admin/pages/MangeUser/RoleListPage"
-import UserListPage from "../modules/admin/pages/MangeUser/UserListPage"
 import StoryLayout from "../modules/admin/layout/StoryLayout/StoryLayout"
-import UploadStory from "../modules/admin/features/ManageStory/StoryLIst/UploadStory"
-import OwnBackyard from "../modules/admin/features/ManageStory/StoryLIst/OwnBackyard"
+import OrderListLayout from "../modules/admin/layout/OrderListLayout/OrderListLayout"
+import QcLayout from "../modules/admin/layout/QcLayout/QcLayout"
+import ReportLayout from "../modules/admin/layout/ReportLayout/ReportLayout"
+import AuthGuard from "../modules/admin/services/AuthGuard"
 import adminStore from "../modules/admin/store/reduxStore"
 import { Provider } from "react-redux"
-import CustomerListPage from "../modules/admin/pages/CustomerList/CustomerListPage"
-import OrderListPage from "../modules/admin/pages/OrderList/OrderListPage"
-import OrderDetails from "../modules/admin/features/OrderList/OrderDetails"
-import OrderListLayout from "../modules/admin/layout/OrderListLayout/OrderListLayout"
-import OrderDetailsPage from "../modules/admin/pages/OrderList/OrderDetailsPage"
-import QcListPage from "../modules/admin/pages/QCList/QcListPage"
-import QcLayout from "../modules/admin/layout/QcLayout/QcLayout"
-import QcDetailsPage from "../modules/admin/pages/QCList/QcDetailsPage"
-import TransactionsPage from "../modules/admin/pages/Transactions/TransactionsPage"
-import CouponPage from "../modules/admin/pages/Coupon/CouponPage"
-import RewardsPage from "../modules/admin/pages/Rewards/RewardsPage"
-import CustomerDetailsPage from "../modules/admin/pages/CustomerList/CustomerDetailsPage"
-import VideosTestimonials from "../modules/admin/pages/VideosNTestimonials/VideosTestimonials"
-import ReviewsNFeedback from "../modules/admin/pages/ReviewsNFeedback/ReviewsNFeedback"
-import ServiceRequests from "../modules/admin/pages/ServiceRequests/ServiceRequests"
-import ServiceRequestDetails from "../modules/admin/pages/ServiceRequests/ServiceRequestDetails"
-import ConfigureMetaData from "../modules/admin/pages/ManageStory/ConfigureMetaDataPage"
-import SubscriptionPage from "../modules/admin/pages/Subscription/SubscriptionPage"
-import ReportLoyout from "../modules/admin/layout/ReportLoyout/ReportLoyout"
-import OrderReports from "../modules/admin/features/ReportManagement/OrderReports/OrderReports"
-import StoryPerformance from "../modules/admin/features/ReportManagement/StoryPerformance/StoryPerformance"
-import Subscription from "../modules/admin/features/ReportManagement/Subscription/Subscription"
-import ConfigureBanner from "../modules/admin/pages/ConfigureBanner/ConfigureBanner"
-import ConfigureBookTypeCategory from "../modules/admin/pages/ManageStory/ConfigureBookTypeCategory/ConfigureBookTypeCategory"
-import ConfigureCharacterType from "../modules/admin/pages/ManageStory/ConfigureCharacterType/ConfigureCharacterType"
-import ConfigureAgeGroup from "../modules/admin/pages/ManageStory/ConfigureAgeGroup/ConfigureAgeGroup"
-import ConfigureCoverImage from "../modules/admin/pages/ManageStory/ConfigureCoverImage/ConfigureCoverImage"
-import ComingSoon from "../modules/admin/features/ComingSoon/ComingSoon"
-import Failedjobs from "../modules/admin/features/Failedjobs/Failedjobs"
-import ComingSoonPage from "../modules/admin/pages/ManageStory/ComingSoonPage"
-import AddStory from "../modules/admin/features/ManageStory/StoryLIst/AddStory"
+
+// Lazy-loaded page and feature components
+const LoginForm = React.lazy(() => import("../modules/admin/pages/Login/Login"))
+const ForgotPassword = React.lazy(() => import("../modules/admin/pages/Login/ForgotPassword"))
+const CustomerListPage = React.lazy(() => import("../modules/admin/pages/CustomerList/CustomerListPage"))
+const CustomerDetailsPage = React.lazy(() => import("../modules/admin/pages/CustomerList/CustomerDetailsPage"))
+const OrderListPage = React.lazy(() => import("../modules/admin/pages/OrderList/OrderListPage"))
+const OrderDetailsPage = React.lazy(() => import("../modules/admin/pages/OrderList/OrderDetailsPage"))
+const StoryListPage = React.lazy(() => import("../modules/admin/pages/ManageStory/StoryListPage"))
+const ConfigureCategoryPage = React.lazy(() => import("../modules/admin/pages/ManageStory/ConfigureCategoryPage"))
+const ConfigureLibraryPage = React.lazy(() => import("../modules/admin/pages/ManageStory/ConfigureLibraryPage"))
+const ConfigureMetaData = React.lazy(() => import("../modules/admin/pages/ManageStory/ConfigureMetaDataPage"))
+const ConfigureBookTypeCategory = React.lazy(() => import("../modules/admin/pages/ManageStory/ConfigureBookTypeCategory/ConfigureBookTypeCategory"))
+const ConfigureCharacterType = React.lazy(() => import("../modules/admin/pages/ManageStory/ConfigureCharacterType/ConfigureCharacterType"))
+const ConfigureAgeGroup = React.lazy(() => import("../modules/admin/pages/ManageStory/ConfigureAgeGroup/ConfigureAgeGroup"))
+const ConfigureCoverImage = React.lazy(() => import("../modules/admin/pages/ManageStory/ConfigureCoverImage/ConfigureCoverImage"))
+const ComingSoonPage = React.lazy(() => import("../modules/admin/pages/ManageStory/ComingSoonPage"))
+const QcListPage = React.lazy(() => import("../modules/admin/pages/QCList/QcListPage"))
+const QcDetailsPage = React.lazy(() => import("../modules/admin/pages/QCList/QcDetailsPage"))
+const TransactionsPage = React.lazy(() => import("../modules/admin/pages/Transactions/TransactionsPage"))
+const CouponPage = React.lazy(() => import("../modules/admin/pages/Coupon/CouponPage"))
+const RewardsPage = React.lazy(() => import("../modules/admin/pages/Rewards/RewardsPage"))
+const SubscriptionPage = React.lazy(() => import("../modules/admin/pages/Subscription/SubscriptionPage"))
+const ReviewsNFeedback = React.lazy(() => import("../modules/admin/pages/ReviewsNFeedback/ReviewsNFeedback"))
+const VideosTestimonials = React.lazy(() => import("../modules/admin/pages/VideosNTestimonials/VideosTestimonials"))
+const ServiceRequests = React.lazy(() => import("../modules/admin/pages/ServiceRequests/ServiceRequests"))
+const ServiceRequestDetails = React.lazy(() => import("../modules/admin/pages/ServiceRequests/ServiceRequestDetails"))
+const ConfigureBanner = React.lazy(() => import("../modules/admin/pages/ConfigureBanner/ConfigureBanner"))
+const RoleListPage = React.lazy(() => import("../modules/admin/pages/MangeUser/RoleListPage"))
+const UserListPage = React.lazy(() => import("../modules/admin/pages/MangeUser/UserListPage"))
+const UploadStory = React.lazy(() => import("../modules/admin/features/ManageStory/StoryLIst/UploadStory"))
+const OwnBackyard = React.lazy(() => import("../modules/admin/features/ManageStory/StoryLIst/OwnBackyard"))
+const AddStory = React.lazy(() => import("../modules/admin/features/ManageStory/StoryLIst/AddStory"))
+const OrderReports = React.lazy(() => import("../modules/admin/features/ReportManagement/OrderReports/OrderReports"))
+const StoryPerformance = React.lazy(() => import("../modules/admin/features/ReportManagement/StoryPerformance/StoryPerformance"))
+const Subscription = React.lazy(() => import("../modules/admin/features/ReportManagement/Subscription/Subscription"))
+const ComingSoon = React.lazy(() => import("../modules/admin/features/ComingSoon/ComingSoon"))
+const Failedjobs = React.lazy(() => import("../modules/admin/features/Failedjobs/Failedjobs"))
+
+const AdminPageLoader = () => (
+  <div style={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "60vh" }}>
+    <div style={{ width: 32, height: 32, border: "3px solid #e0e0e0",
+      borderTop: "3px solid #1976d2", borderRadius: "50%", animation: "spin 0.8s linear infinite" }} />
+  </div>
+)
 
 const routes = createBrowserRouter([
   {
@@ -138,7 +148,7 @@ const routes = createBrowserRouter([
           },
           {
             path: "reports",
-            element: <ReportLoyout />,
+            element: <ReportLayout />,
             children: [
               { index: true, element: <OrderReports /> },
               {
@@ -188,7 +198,10 @@ const routes = createBrowserRouter([
 export default function Admin() {
   return (
     <Provider store={adminStore}>
-      <RouterProvider router={routes} />
+      <Toaster position="top-right" reverseOrder={false} />
+      <Suspense fallback={<AdminPageLoader />}>
+        <RouterProvider router={routes} />
+      </Suspense>
     </Provider>
   )
 }

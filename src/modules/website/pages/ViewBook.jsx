@@ -21,6 +21,7 @@ import Slider from "react-slick";
 import useIsMobile from "../../web/hooks/useIsMobile";
 import EmblaCarouselAuto2 from "../components/carousel-autoplay/embla-auto2";
 import VideoPlayerViewBook from "./VideoPlayerViewBook";
+import "../../web/pages/book/book.css";
 
 export default function ViewBook() {
   const navigate = useNavigate()
@@ -85,11 +86,10 @@ export default function ViewBook() {
   const handlePersonalizeStory = () => {
     navigate("/user/personalize_story", {
       state: {
-        storyId: booksData?.id, // Your actual ID
+        storyId: booksData?.id,
         isdata: booksData,
       },
     })
-    window.location.reload()
   }
 
   const handleImgChange = (img) => {
@@ -460,7 +460,7 @@ export default function ViewBook() {
 
                 {/* Buttons starts*/}
                 <div className="view_book_buttons d-none d-md-block">
-                  <Link reloadDocument to={`/user/personalize_story?story=${encodeURIComponent(booksData?.name)}`}>
+                  <Link to={`/user/personalize_story?story=${encodeURIComponent(booksData?.name)}`}>
                     <button className="personalizeBtn"
                     // onClick={() => handlePersonalizeStory()}
                     ><img src={magic_icon} alt="" />Personalize My Book</button>
@@ -471,7 +471,7 @@ export default function ViewBook() {
               </div>
             </div>
 
-            <Link reloadDocument to={`/user/personalize_story?story=${encodeURIComponent(booksData?.name)}`}>
+            <Link to={`/user/personalize_story?story=${encodeURIComponent(booksData?.name)}`}>
               <button className="mobile-sticky-btn"><img src={magic_icon} alt="" />Personalize My Book</button>
             </Link>
           </div>
@@ -565,9 +565,7 @@ export default function ViewBook() {
                   </h2>}
                   <section
                     className={`${classes.button__primary__container3}`}
-                    onClick={() => {
-                      navigate("/user/coming-soon");
-                    }}
+                    onClick={() => navigate("/user/coming-soon")}
                   >
                     <button
                       className={`${classes.button__primary3} ${classes.button__primary__l}`}

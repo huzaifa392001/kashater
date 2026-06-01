@@ -3,31 +3,26 @@
 @font-face {
   font-family: "Quicksand-Light";
   src: url("../modules/website/assets/fonts/Quicksand-Light.ttf") format("truetype");
-  font-display: swap;
 }
 
 @font-face {
   font-family: "Quicksand-Regular";
   src: url("../modules/website/assets/fonts/Quicksand-Regular.ttf") format("truetype");
-  font-display: swap;
 }
 
 @font-face {
   font-family: "Quicksand-Medium";
   src: url("../modules/website/assets/fonts/Quicksand-Medium.ttf") format("truetype");
-  font-display: swap;
 }
 
 @font-face {
   font-family: "Quicksand-Semibold";
   src: url("../modules/website/assets/fonts/Quicksand-SemiBold.ttf") format("truetype");
-  font-display: swap;
 }
 
 @font-face {
   font-family: "Quicksand-Bold";
   src: url("../modules/website/assets/fonts/Quicksand-Bold.ttf") format("truetype");
-  font-display: swap;
 }
 
 /* fonts ends */

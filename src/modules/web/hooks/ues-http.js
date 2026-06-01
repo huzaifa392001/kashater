@@ -102,14 +102,10 @@ const useApiHttp = () => {
             setTimeout(() => (hasShown401Toast.current = false), 5000);
           }
 
-          window.location.href = "/user/login"
-          // navigate("/user/login");
+          navigate("/user/login");
         } else {
           if (errorMessage == 'Mobile no. already verified') {
             toast.error('Something went wrong. Please try again.');
-            setTimeout(() => {
-              window.location.reload()
-            }, 1000)
           } else {
             toast.error(errorMessage);
           }

@@ -735,7 +735,7 @@ export default function MyCart() {
                               {book?.description}
                             </p>
                             <div className="actions-cart">
-                              <Link reloadDocument to={`/user/personalize_story?story=${encodeURIComponent(book?.title)}&storyId=${book?.book_id}&cartId=${book?.id}&whatpage=my_cart&modify=edit`}>
+                              <Link to={`/user/personalize_story?story=${encodeURIComponent(book?.title)}&storyId=${book?.book_id}&cartId=${book?.id}&whatpage=my_cart&modify=edit`}>
                                 <button className="linkBtn"
                                 // onClick={() => {
                                 //   navigate("/user/personalize_story", {
@@ -992,7 +992,6 @@ export default function MyCart() {
                           reward_points_used: isChecked ? point : "",
                         },
                       })
-                      window.location.reload()
                     }
                   }}>Continue</button>
                 </div>
