@@ -806,7 +806,6 @@ after 14 working days, kindly contact us at support@kadhaster.com.`,
   const [selectedStory, setSelectedStory] = useState(null);
   const [selectedStoryData, setSelectedStoryData] = useState(null);
   const [carouselIndex, setCarouselIndex] = useState(0);
-  console.log(carouselIndex, "carousel");
   const [loading, setLoading] = useState(false);
   const [apiData, setApiData] = useState({
     story: [],
@@ -814,7 +813,6 @@ after 14 working days, kindly contact us at support@kadhaster.com.`,
     testimonial: [],
     banner: null,
   });
-  console.log(apiData.banner);
   const [accordionIndex, setAccordionIndex] = useState(null);
 
   const baseUrl = import.meta.env.VITE_API_BASE_URL;
@@ -1373,9 +1371,10 @@ after 14 working days, kindly contact us at support@kadhaster.com.`,
                 setCarouselIndex={setCarouselIndex}
                 options={{ loop: true, watchDrag: tabWidth }}
               >
-                {data.hero_data.map((item) => {
+                {data.hero_data.map((item, i) => {
                   return (
                     <section
+                      key={i}
                       id="hero"
                       className={`${classes.slider__row} embla__auto__slide`}
                       style={{}}
@@ -1551,9 +1550,9 @@ after 14 working days, kindly contact us at support@kadhaster.com.`,
             <br />
             <h2 className={`${classes.section__title}`}>how it works ?</h2>
             <ul className={`${classes.section__container__space}`}>
-              {data.howitworks.block.map((item) => {
+              {data.howitworks.block.map((item, i) => {
                 return (
-                  <li>
+                  <li key={i}>
                     <img src={item.img} alt=""
                       draggable={false}
                       onContextMenu={(e) => import.meta.env.VITE_IMG_METHOD == 'dev' ? undefined : e.preventDefault()} />
@@ -1648,8 +1647,8 @@ after 14 working days, kindly contact us at support@kadhaster.com.`,
             <div className={`${classes.more_than_book_grid}`}>
               {moreThanBook?.map((item, ind) => {
                 return (
-                  <div className={`${classes.col_md_4}`}>
-                    <div className={`${classes.more_than_book_card}`} key={ind}>
+                  <div key={item.id} className={`${classes.col_md_4}`}>
+                    <div className={`${classes.more_than_book_card}`}>
                       <img
                         draggable={false}
                         onContextMenu={(e) => import.meta.env.VITE_IMG_METHOD == 'dev' ? undefined : e.preventDefault()} src={item?.image} alt="" />

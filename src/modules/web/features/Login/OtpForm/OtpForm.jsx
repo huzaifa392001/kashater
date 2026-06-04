@@ -87,12 +87,12 @@ const OtpForm = () => {
     )
   }
   useEffect(() => {
-    if (verifyOtpSucces !== "") {
+    if (verifyOtpSucces) {
       toast.success(verifyOtpSucces, {
         // position: toast.POSITION.TOP_RIGHT,
       })
     }
-    if (verifyOtpError !== "") {
+    if (verifyOtpError) {
       toast.error(verifyOtpError, {
         // position: toast.POSITION.TOP_RIGHT,
       })

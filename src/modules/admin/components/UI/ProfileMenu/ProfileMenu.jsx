@@ -69,10 +69,10 @@ export default function CustomizedMenus() {
   const navigate = useNavigate()
   const dispatch = useDispatch()
   useEffect(() => {
-    if (success !== "") {
+    if (success) {
       toast.success(success, {})
     }
-    if (error !== "") {
+    if (error) {
       toast.error(error, {})
     }
   }, [success, error])

@@ -110,10 +110,10 @@ const ProfilePage = () => {
   }
 
   useEffect(() => {
-    if (success !== "") {
+    if (success) {
       toast.success(success, {})
     }
-    if (error !== "") {
+    if (error) {
       toast.error(error, {})
     }
   }, [success, error])
