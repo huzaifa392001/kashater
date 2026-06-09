@@ -78,7 +78,7 @@ function Header() {
   return (
     <>
       {isLoading && <OverlayLoding />}
-      <Navbar expand="xl" className="custom-navbar pos-nav py-3">
+      <Navbar expand="xl" expanded={isMenuOpen} onToggle={setIsMenuOpen} className="custom-navbar pos-nav py-3">
         <Container>
           {/* Left: Logo */}
           <Navbar.Brand as={Link} to="/">
@@ -126,19 +126,19 @@ function Header() {
             {/* LIVE END */}
             {/* DEV START */}
             <Nav className="mx-auto">
-              <Link to="/" className={`nav-link ${pathname == "/" ? 'active' : ""}`}>
+              <Link to="/" onClick={() => setIsMenuOpen(false)} className={`nav-link ${pathname == "/" ? 'active' : ""}`}>
                 Home
               </Link>
-              <a href="/#howitworks" className={`nav-link ${pathname == "/about" ? 'active' : ""}`}>
+              <Link to="/#howitworks" onClick={() => setIsMenuOpen(false)} className={`nav-link ${pathname == "/about" ? 'active' : ""}`}>
                 How it works
-              </a>
-              <Link to="/user" className={`nav-link ${pathname == "/user" ? 'active' : ""}`}>
+              </Link>
+              <Link to="/user" onClick={() => setIsMenuOpen(false)} className={`nav-link ${pathname == "/user" ? 'active' : ""}`}>
                 Our Products
               </Link>
-              <Link to="/user/my_orders" className={`nav-link ${pathname == "/user/my_orders" ? 'active' : ""}`}>
+              <Link to="/user/my_orders" onClick={() => setIsMenuOpen(false)} className={`nav-link ${pathname == "/user/my_orders" ? 'active' : ""}`}>
                 My Orders
               </Link>
-              <Link to="/user/try-now" className={`nav-link ${pathname == "/user/try-now" ? 'active' : ""}`}>
+              <Link to="/user/try-now" onClick={() => setIsMenuOpen(false)} className={`nav-link ${pathname == "/user/try-now" ? 'active' : ""}`}>
                 Try Now
               </Link>
               {/* <a to="/blogs" className={`nav-link ${pathname == "/blog" ? 'active' : ""}`}>
@@ -148,7 +148,7 @@ function Header() {
               {isAuthenticated() ?
                 null
                 :
-                <Link to="/user/login" className={`nav-link res-mob ${pathname == "/Login / Signup" ? 'active' : ""}`}>
+                <Link to="/user/login" onClick={() => setIsMenuOpen(false)} className={`nav-link res-mob ${pathname == "/Login / Signup" ? 'active' : ""}`}>
                   Login / Signup
                 </Link>
               }

@@ -178,7 +178,7 @@ export const Header = (props) => {
             <li>
               <NavLink
                 to={"/"}
-                onClick={handleClick}
+                onClick={() => { handleClick; toggleDrawer(false)(); }}
                 className={({ isActive }) => {
                   return isActive ? `${classes.active}` : "";
                 }}
@@ -189,20 +189,20 @@ export const Header = (props) => {
             </li>
 
             <li>
-              <Link to="/user">Our Products</Link>
+              <Link to="/user" onClick={toggleDrawer(false)}>Our Products</Link>
             </li>
             <li>
-              <Link to="/user/my_orders">My Orders</Link>
+              <Link to="/user/my_orders" onClick={toggleDrawer(false)}>My Orders</Link>
             </li>
             <li>
-              <Link to="/user/try-now">Try Now</Link>
+              <Link to="/user/try-now" onClick={toggleDrawer(false)}>Try Now</Link>
             </li>
             <li>
-              <Link to="/user/forms">Forms</Link>
+              <Link to="/user/forms" onClick={toggleDrawer(false)}>Forms</Link>
             </li>
             {isAuth && (
               <li>
-                <Link to="/user/profile_page">Profile</Link>
+                <Link to="/user/profile_page" onClick={toggleDrawer(false)}>Profile</Link>
               </li>
             )}
           </ul>
@@ -210,6 +210,7 @@ export const Header = (props) => {
             <section
               onClick={() => {
                 navigate("/user/login");
+                toggleDrawer(false)();
               }}
               className={`${common_classes.button__primary__container}`}
             >
@@ -226,9 +227,8 @@ export const Header = (props) => {
       {/* web view navbar starts */}
 
       <nav
-        className={`${classes.header__navigation}  ${
-          scrolled ? classes.header__bg : ""
-        }`}
+        className={`${classes.header__navigation}  ${scrolled ? classes.header__bg : ""
+          }`}
       >
         <section className={`${classes.container}`}>
           <Link to="/">
@@ -238,7 +238,7 @@ export const Header = (props) => {
               alt="company logo"
             />
           </Link>
-          
+
           <section className={classes.navigation__main}>
             <ul className={`${classes.links}`}>
               <li>
